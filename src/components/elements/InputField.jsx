@@ -13,7 +13,7 @@ function InputField({ icon, type, CustomStyles, ...props }) {
 
             {isPassword && (
                 <svg onClick={() => setShowPassword(!showPassword)} className={`w-6 h-6 text-gray-500 absolute top-1/2 transform -translate-y-1/2 left-5 cursor-pointer hover:text-black transition-all opacity-0 pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:inline-block group-focus-within:opacity-100 group-focus-within:text-black ${value ? "opacity-100 inline-block" : ""}`}>
-                    {showPassword ? <use href="#eye-slash"></use> : <use href="#eye"></use>}
+                    <use href={showPassword ? "#eye-slash" : "#eye"}></use>
                 </svg>
             )
             }
