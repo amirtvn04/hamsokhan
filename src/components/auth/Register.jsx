@@ -2,6 +2,7 @@ import Button from '../elements/Button'
 import InputField from '../elements/InputField'
 import { supabase } from "../../lib/supabase.js"
 import { useState } from 'react'
+import AsiedeAuth from './AsiedeAuth.jsx'
 
 function Register() {
     const [email, setEmail] = useState("")
@@ -40,15 +41,15 @@ function Register() {
     }
 
     return (
-        <div className='flex items-center gap-x-10 h-dvh'>
-            <div className='w-1/2'>
-                <form onSubmit={handleRegister} className='max-w-100 flex flex-col justify-center items-center mx-auto'>
+        <div className='flex items-center h-dvh'>
+            <main className='flex-1 flex flex-col justify-between bg-white h-full px-5 pt-16 pb-8'>
+                <form onSubmit={handleRegister} className='w-82.25 sm:w-[384px] flex flex-1 flex-col justify-center items-center mx-auto'>
                     <div className='bg-primary w-12 h-12 rounded-lg flex items-center justify-center text-[24px] text-white'>
                         هـ
                     </div>
 
                     <h3 className='mt-7'>به جمع هم‌سخن ها بپیوندید!</h3>
-                    <p className='text-gray-500 mt-1 mb-12 tracking-tight text-center'>در هم‌سخن می‌توانید سؤال بپرسید، تجربه‌هایتان را به اشتراک بگذارید و با دانشجویان و فارغ‌التحصیلان دانشگاه‌های ایران گفتگو کنید.</p>
+                    <p className='text-gray-500 mt-1 mb-12 tracking-tight text-center'>در هم‌سخن می‌توانید سؤال بپرسید، تجربه‌هایتان را به اشتراک بگذارید و با دانشجویان و فارغ‌التحصیلان گفتگو کنید.</p>
 
                     <div className='space-y-3.5 w-full mb-7'>
                         <InputField value={fullName} onChange={(e) => setFullName(e.target.value)} icon='person' type='text' CustomStyles='w-full pr-12 pl-5 py-4' placeholder='نام مستعار' />
@@ -62,15 +63,13 @@ function Register() {
 
                     <Button value={loading ? "در حال ثبت‌نام..." : "ثبت‌نام"} type='submit' />
 
-                    <p className='text-lg mt-7 text-gray-500 tracking-tight'>با ثبت‌نام در هم‌سخن، <a className='text-[#0065F4] font-bold underline cursor-pointer focus:outline-none focus:text-[#003d93] hover:text-[#003d93]'>قوانین و حریم خصوصی </a>
-
-                        را می‌پذیرید.
-                    </p>
                 </form>
-            </div>
-            <div className='w-1/2'>
-                hi
-            </div>
+                <p className='text-sm mt-7 text-gray-500 tracking-tight text-center'>با ادامه، <a className='text-[#0065F4] font-bold underline cursor-pointer focus:outline-none focus:text-[#003d93] hover:text-[#003d93]'>قوانین و سیاست حریم خصوصی هم‌سخن </a>
+                    را می‌پذیرید.
+                </p>
+            </main>
+
+            <AsiedeAuth />
         </div>
     )
 }

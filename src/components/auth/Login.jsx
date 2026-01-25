@@ -2,6 +2,7 @@ import Button from '../elements/Button'
 import InputField from '../elements/InputField'
 import { supabase } from "../../lib/supabase"
 import { useState } from 'react'
+import AsiedeAuth from './AsiedeAuth'
 
 function Login({ gotoRegister }) {
     const [email, setEmail] = useState("")
@@ -20,9 +21,9 @@ function Login({ gotoRegister }) {
     }
 
     return (
-        <div className='flex items-center gap-x-10 h-dvh'>
-            <div className='w-1/2'>
-                <form onSubmit={handleLogin} className='max-w-100 flex flex-col justify-center items-center mx-auto'>
+        <div className='flex items-center h-dvh'>
+            <main className='flex-1 flex flex-col justify-between bg-white h-full px-5 pt-16 pb-8'>
+                <form onSubmit={handleLogin} className='w-82.25 sm:w-[384px] flex flex-1 flex-col justify-center items-center mx-auto'>
                     <div className='bg-primary w-12 h-12 rounded-lg flex items-center justify-center text-[24px] text-white'>
                         هـ
                     </div>
@@ -35,18 +36,20 @@ function Login({ gotoRegister }) {
                         <InputField value={password} onChange={(e) => setPassword(e.target.value)} icon='key' type='password' CustomStyles='w-full pr-12 pl-5 py-4' placeholder='رمز عبور' />
                     </div>
 
-                    <a className='text-[#0065F4] font-bold self-start mr-3 mt-3.5 text-lg underline mb-7 cursor-pointer focus:outline-none focus:text-[#003d93] hover:text-[#003d93] tracking-tight'>فراموشی رمز عبور؟</a>
+                    <a className='text-[#0065F4] font-bold self-start mr-3 mt-3.5 underline mb-7 cursor-pointer focus:outline-none focus:text-[#003d93] hover:text-[#003d93] tracking-tight'>فراموشی رمز عبور؟</a>
 
                     {error && <p className="text-red-500 mt-2">{error}</p>}
 
                     <Button value='ورود' type='submit' />
 
-                    <p className='text-lg mt-7 text-gray-500 tracking-tight'>حساب کاربری ندارید؟ <a onClick={() => gotoRegister()} className='text-[#0065F4] font-bold underline cursor-pointer focus:outline-none focus:text-[#003d93] hover:text-[#003d93]'>ثبت‌نام</a></p>
+                    <p className='mt-7 text-gray-500 tracking-tight'>حساب کاربری ندارید؟ <a onClick={() => gotoRegister()} className='text-[#0065F4] font-bold underline cursor-pointer focus:outline-none focus:text-[#003d93] hover:text-[#003d93]'>ثبت‌نام</a></p>
                 </form>
-            </div>
-            <div className='w-1/2'>
-                hi
-            </div>
+                <p className='text-sm mt-7 text-gray-500 tracking-tight text-center'>با ادامه، <a className='text-[#0065F4] font-bold underline cursor-pointer focus:outline-none focus:text-[#003d93] hover:text-[#003d93]'>قوانین و سیاست حریم خصوصی هم‌سخن </a>
+                    را می‌پذیرید.
+                </p>
+            </main>
+
+            <AsiedeAuth />
         </div>
     )
 }
