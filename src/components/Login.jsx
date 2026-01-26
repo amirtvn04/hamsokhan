@@ -1,6 +1,6 @@
-import Button from '../elements/Button'
-import InputField from '../elements/InputField'
-import { supabase } from "../../lib/supabase"
+import Button from './elements/Button'
+import InputField from './elements/InputField'
+import { supabase } from "../lib/supabase"
 import { useState } from 'react'
 import AsiedeAuth from './AsiedeAuth'
 
@@ -19,7 +19,7 @@ function Login({ gotoRegister }) {
             email,
             password
         })
-        console.log({data})
+        console.log({ data })
         if (error) setError(error.message)
         else alert("ورود موفق! خوش آمدید.")
         setLoading(false)

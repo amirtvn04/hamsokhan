@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { testimonials } from "../../data/testimonials";
+import { testimonials } from "../data/testimonials";
 
 function AsiedeAuth() {
     const [current, setCurrent] = useState(0);

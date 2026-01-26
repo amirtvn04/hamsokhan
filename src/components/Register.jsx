@@ -1,6 +1,6 @@
-import Button from '../elements/Button'
-import InputField from '../elements/InputField'
-import { supabase } from "../../lib/supabase.js"
+import Button from './elements/Button.jsx'
+import InputField from './elements/InputField.jsx'
+import { supabase } from "../lib/supabase.js"
 import { useState } from 'react'
 import AsiedeAuth from './AsiedeAuth.jsx'
 
@@ -61,7 +61,7 @@ function Register() {
 
                     {error && <p className="text-red-500 mt-2">{error}</p>}
 
-                    <Button value={loading ? "در حال ثبت‌نام..." : "ثبت‌نام"} type='submit' disabled={loading}/>
+                    <Button value={loading ? "در حال ثبت‌نام..." : "ثبت‌نام"} type='submit' disabled={loading} />
 
                 </form>
                 <p className='text-sm mt-7 text-gray-500 tracking-tight text-center'>با ادامه، <a className='text-[#0065F4] font-bold underline cursor-pointer focus:outline-none focus:text-[#003d93] hover:text-[#003d93]'>قوانین و سیاست حریم خصوصی هم‌سخن </a>
