@@ -26,8 +26,8 @@ function Login({ gotoRegister }) {
     }
 
     return (
-        <div className='flex items-center h-dvh'>
-            <main className='flex-1 flex flex-col justify-between bg-white h-full px-5 pt-16 pb-8 shadow-lg'>
+        <div className='flex items-center min-h-dvh'>
+            <main className='flex-1 flex flex-col justify-between bg-white min-h-dvh px-5 pt-16 pb-8 shadow-lg border-black/30 border-l'>
                 <form onSubmit={handleSignIn} className='w-82.25 sm:w-[384px] flex flex-1 flex-col justify-center items-center mx-auto'>
                     <div className='bg-primary w-12 h-12 rounded-lg flex items-center justify-center text-[24px] text-white'>
                         هـ
