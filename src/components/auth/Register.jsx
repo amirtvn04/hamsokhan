@@ -42,7 +42,7 @@ function Register() {
 
     return (
         <div className='flex items-center h-dvh'>
-            <main className='flex-1 flex flex-col justify-between bg-white h-full px-5 pt-16 pb-8'>
+            <main className='flex-1 flex flex-col justify-between bg-white h-full px-5 pt-16 pb-8 shadow-lg'>
                 <form onSubmit={handleRegister} className='w-82.25 sm:w-[384px] flex flex-1 flex-col justify-center items-center mx-auto'>
                     <div className='bg-primary w-12 h-12 rounded-lg flex items-center justify-center text-[24px] text-white'>
                         هـ
@@ -61,7 +61,7 @@ function Register() {
 
                     {error && <p className="text-red-500 mt-2">{error}</p>}
 
-                    <Button value={loading ? "در حال ثبت‌نام..." : "ثبت‌نام"} type='submit' />
+                    <Button value={loading ? "در حال ثبت‌نام..." : "ثبت‌نام"} type='submit' disabled={loading}/>
 
                 </form>
                 <p className='text-sm mt-7 text-gray-500 tracking-tight text-center'>با ادامه، <a className='text-[#0065F4] font-bold underline cursor-pointer focus:outline-none focus:text-[#003d93] hover:text-[#003d93]'>قوانین و سیاست حریم خصوصی هم‌سخن </a>

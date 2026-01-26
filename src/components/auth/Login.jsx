@@ -7,23 +7,28 @@ import AsiedeAuth from './AsiedeAuth'
 function Login({ gotoRegister }) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
 
-    const handleLogin = async (e) => {
+    const handleSignIn = async (e) => {
         e.preventDefault();
 
-        const { error } = await supabase.auth.signInWithPassword({
+        setLoading(true)
+        setError(null)
+        const { data, error } = await supabase.auth.signInWithPassword({
             email,
             password
         })
-
+        console.log({data})
         if (error) setError(error.message)
+        else alert("ورود موفق! خوش آمدید.")
+        setLoading(false)
     }
 
     return (
         <div className='flex items-center h-dvh'>
-            <main className='flex-1 flex flex-col justify-between bg-white h-full px-5 pt-16 pb-8'>
-                <form onSubmit={handleLogin} className='w-82.25 sm:w-[384px] flex flex-1 flex-col justify-center items-center mx-auto'>
+            <main className='flex-1 flex flex-col justify-between bg-white h-full px-5 pt-16 pb-8 shadow-lg'>
+                <form onSubmit={handleSignIn} className='w-82.25 sm:w-[384px] flex flex-1 flex-col justify-center items-center mx-auto'>
                     <div className='bg-primary w-12 h-12 rounded-lg flex items-center justify-center text-[24px] text-white'>
                         هـ
                     </div>
@@ -40,7 +45,7 @@ function Login({ gotoRegister }) {
 
                     {error && <p className="text-red-500 mt-2">{error}</p>}
 
-                    <Button value='ورود' type='submit' />
+                    <Button value={loading ? "لطفا صبر کنید..." : "ورود"} type='submit' disabled={loading} />
 
                     <p className='mt-7 text-gray-500 tracking-tight'>حساب کاربری ندارید؟ <a onClick={() => gotoRegister()} className='text-[#0065F4] font-bold underline cursor-pointer focus:outline-none focus:text-[#003d93] hover:text-[#003d93]'>ثبت‌نام</a></p>
                 </form>

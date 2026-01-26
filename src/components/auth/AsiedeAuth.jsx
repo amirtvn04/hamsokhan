@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { testimonials } from "../../../public/data/testimonials";
+import { testimonials } from "../../data/testimonials";
 
 function AsiedeAuth() {
     const [current, setCurrent] = useState(0);
@@ -13,7 +13,7 @@ function AsiedeAuth() {
                 } while (next === prev);
                 return next;
             });
-        }, 10000);
+        }, 12000);
 
         return () => clearInterval(interval);
     }, []);
@@ -22,7 +22,7 @@ function AsiedeAuth() {
 
     return (
         <aside className='flex flex-col items-center justify-center flex-1 border-r basis-1/4 border-black/30 h-full p-16'>
-            <div className="relative w-82.25 sm:w-115">
+            <div key={current} className="relative w-82.25 sm:w-110 animate-fadeIn">
                 <span className="text-9xl absolute -z-10 text-gray-300 -right-8 -top-1">“</span>
                 <p className="text-2xl font-bold font-doran leading-14 ">{item.text}</p>
 
