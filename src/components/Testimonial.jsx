@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { testimonials } from "../data/testimonials";
 
-function AsiedeAuth() {
+function Testimonial() {
     const [current, setCurrent] = useState(0);
 
     useEffect(() => {
@@ -37,4 +37,4 @@ function AsiedeAuth() {
     )
 }
 
-export default AsiedeAuth
+export default Testimonial
