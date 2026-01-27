@@ -1,6 +1,3 @@
-@import "tailwindcss";
-
-/* Import Custom Fonts */
 @font-face {
 	font-family: Doran FaNum;
 	font-style: normal;
@@ -111,46 +108,4 @@
 	font-weight: 950;
 	src: url('/fonts/woff/yekanbakh-ExtraBlack.woff') format('woff'),
 		url('/fonts/woff2/yekanbakh-ExtraBlack.woff2') format('woff2');
-}
-
-
-/* Custom Styles */
-:root {
-	--color-primary: #0065F4;
-	--color-background: #FAFAFA;
-}
-
-.font-bakh {
-	font-family: yekanbakh;
-}
-
-.font-doran {
-	font-family: Doran FaNum;
-}
-
-.bg-primary {
-	background-color: var(--color-primary);
-}
-
-.text-primary {
-	color: var(--color-primary);
-}
-
-.bg-secondary {
-	background-color: var(--color-background);
-}
-
-h3 {
-	font-family: Doran FaNum;
-	font-size: 20px;
-	font-weight: bold;
-}
-
-.animate-fadeIn{
-    animation: fadeIn 500ms ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
 }
