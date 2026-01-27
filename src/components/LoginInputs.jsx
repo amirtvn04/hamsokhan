@@ -27,9 +27,9 @@ function LoginInputs() {
 
     return (
         <form onSubmit={handleSignIn} className='w-82.25 sm:w-[384px] flex flex-1 flex-col justify-center items-center mx-auto'>
-            <div className='bg-primary w-12 h-12 rounded-lg flex items-center justify-center text-[24px] text-white'>
+            <Link to="/" className='bg-primary w-12 h-12 rounded-lg flex items-center justify-center text-[24px] text-white'>
                 هـ
-            </div>
+            </Link>
 
             <h3 className='mt-7'>به هم‌سخن خوش آمدید!</h3>
             <p className='text-gray-500 mt-1 mb-12 tracking-tight'>برای دسترسی به تالارهای گفتگو وارد حساب کاربری خود شوید</p>

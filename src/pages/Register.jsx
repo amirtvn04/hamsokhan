@@ -2,7 +2,7 @@ import RegisterInputs from '../components/RegisterInputs'
 
 function Register() {
   return (
-    <main className='flex-1 flex flex-col justify-between bg-white min-h-dvh px-5 pt-16 pb-8 shadow-lg border-black/30 border-l'>
+    <main className='flex-1 flex flex-col justify-between bg-white min-h-dvh px-5 pt-16 pb-8 shadow-lg border-black/15 border-l'>
 
       <RegisterInputs />
 
