@@ -1,9 +1,25 @@
+import clsx from "clsx";
 import { Link, NavLink } from "react-router-dom"
+import { useState, useEffect } from "react";
 
 export default function Header() {
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    const [visible, setVisible] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPos = window.pageYOffset;
+            setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 600);
+            setPrevScrollPos(currentScrollPos);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [prevScrollPos]);
+
     return (
-        <header className="bg-white border-b border-black/15">
-            <div className="container mx-auto px-4 lg:px-2.5 flex justify-between items-center py-3">
+        <header className={clsx('bg-white border-b border-black/15 w-full fixed top-0 right-0 transition-all duration-300', !visible && 'transform -translate-y-20')}>
+            <div className="container-uni flex justify-between items-center py-3">
                 <div className="flex items-center gap-x-14">
                     <Link className="flex items-center gap-x-2">
                         <div to="/" className='bg-primary w-10 h-10 rounded-lg flex items-center justify-center text-[24px] text-white'>
@@ -12,14 +28,14 @@ export default function Header() {
                         <span className="text-xl font-bold">هم‌سخن</span>
                     </Link>
                     <nav className="flex items-center gap-x-6 font-bold">
-                        <NavLink to='/'>خانه</NavLink>
-                        <NavLink to='/forums'>انجمن‌ها</NavLink>
-                        <NavLink to='/category'>دسته‌بندی‌ها</NavLink>
-                        <NavLink to='/chat'>گفتگوی زنده</NavLink>
+                        <NavLink className="hover:text-[#0065F4] transition duration-200" to='/'>خانه</NavLink>
+                        <NavLink className="hover:text-[#0065F4] transition duration-200" to='/forums'>انجمن‌ها</NavLink>
+                        <NavLink className="hover:text-[#0065F4] transition duration-200" to='/category'>دسته‌بندی‌ها</NavLink>
+                        <NavLink className="hover:text-[#0065F4] transition duration-200" to='/chat'>گفتگوی زنده</NavLink>
                     </nav>
                 </div>
                 <div className="flex items-center gap-x-3 font-bold ">
-                    <Link to="/login" className="flex items-center gap-x-1 hover:bg-black/5 rounded-lg px-7 py-1.5 transition-colors">
+                    <Link to="/login" className="flex items-center gap-x-1 hover:bg-black/5 rounded-lg px-7 py-1.5 border border-[rgba(0,0,0,0)] hover:border-black/15 transition-colors">
                         <svg className="w-6 h-6">
                             <use href="#door-in"></use>
                         </svg>
