@@ -29,8 +29,8 @@ export default function Header() {
                     </Link>
                     <nav className="flex items-center gap-x-6 font-semibold">
                         <NavLink className="hover:text-[#0065F4] transition duration-200" to='/'>خانه</NavLink>
-                        <NavLink className="hover:text-[#0065F4] transition duration-200" to='/forums'>انجمن‌ها</NavLink>
                         <NavLink className="hover:text-[#0065F4] transition duration-200" to='/category'>دسته‌بندی‌ها</NavLink>
+                        <NavLink className="hover:text-[#0065F4] transition duration-200" to='/forums'>انجمن‌ها</NavLink>
                         <NavLink className="hover:text-[#0065F4] transition duration-200" to='/chat'>گفتگوی زنده</NavLink>
                     </nav>
                 </div>

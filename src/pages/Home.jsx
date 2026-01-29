@@ -61,7 +61,7 @@ function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-3">
             <HotCategoryCard index='0' title='مهندسی کامپیوتر' counter='۱۵,۳۰۰' icon='code' />
             <HotCategoryCard index='1' title='علوم پایه' counter='۴,۵۷۷' icon='science' />
             <HotCategoryCard index='2' title='فرصت های شغلی' counter='۳,۴۳۲' icon='suitcase' />
