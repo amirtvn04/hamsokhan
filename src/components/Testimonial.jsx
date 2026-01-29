@@ -23,7 +23,7 @@ function Testimonial() {
     return (
         <aside className='flex flex-col items-center justify-center flex-1 basis-1/4'>
             <div key={current} className="relative w-82.25 sm:w-110 animate-fadeIn">
-                <span className="text-9xl absolute -z-10 text-gray-300 -right-8 -top-1">“</span>
+                <span className="text-9xl absolute -z-10 text-gray-300 -right-9 -top-2">“</span>
                 <p className="text-2xl font-bold font-doran leading-14 ">{item.text}</p>
 
                 <div className="flex items-center mt-5">

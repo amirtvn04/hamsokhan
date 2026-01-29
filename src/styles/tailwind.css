@@ -21,10 +21,19 @@
 
     .font-bakh {
         font-family: yekanbakh;
+        word-spacing: -0.1em;
     }
 
     .font-doran {
         font-family: Doran FaNum;
+    }
+
+    .tracking-rtl-tight {
+        word-spacing:-0.1em;
+    }
+
+    .tracking-rtl-tighter {
+        word-spacing:-0.2em;
     }
 
     .bg-primary {
@@ -43,6 +52,10 @@
         font-family: Doran FaNum;
         font-size: 20px;
         font-weight: bold;
+    }
+
+    header {
+        z-index: 9999;
     }
 
     .animate-fadeIn {

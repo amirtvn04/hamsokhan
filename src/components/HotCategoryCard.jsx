@@ -9,7 +9,7 @@ const colorVariants = [
     { bg: 'bg-indigo-100', text: 'text-indigo-600', border: 'border-indigo-300' },
 ];
 
-export default function CategoryCard({ title, counter, icon, index = 0 }) {
+export default function HotCategoryCard({ title, counter, icon, index = 0 }) {
     
     
     const color = colorVariants[index];
@@ -22,9 +22,9 @@ export default function CategoryCard({ title, counter, icon, index = 0 }) {
                 </svg>
             </div>
             <Link>
-            <h5 className="text-lg font-bold mt-3">{title}</h5>
+            <h5 className="tex font-semibold mt-3">{title}</h5>
             </Link>
-            <span className="text-gray-500 mt-1 inline-block">{Number(counter).toLocaleString()}
+            <span className="text-gray-500 mt-1 inline-block text-sm">{counter}
                 {" "}
                 تاپیک
             </span>

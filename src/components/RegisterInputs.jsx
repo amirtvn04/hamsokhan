@@ -47,7 +47,7 @@ function RegisterInputs() {
             </Link>
 
             <h3 className='mt-7'>به جمع هم‌سخن ها بپیوندید!</h3>
-            <p className='text-gray-500 mt-1 mb-12 tracking-tight text-center'>در هم‌سخن می‌توانید سؤال بپرسید، تجربه‌هایتان را به اشتراک بگذارید و با دانشجویان و فارغ‌التحصیلان گفتگو کنید.</p>
+            <p className='text-gray-500 mt-2 mb-12 tracking-rtl-tighter text-center leading-7'>در هم‌سخن می‌توانید سؤال بپرسید، تجربه‌هایتان را به اشتراک بگذارید و با دانشجویان و فارغ‌التحصیلان گفتگو کنید.</p>
 
             <div className='space-y-3.5 w-full mb-7'>
                 <InputField value={fullName} onChange={(e) => setFullName(e.target.value)} icon='person' type='text' CustomStyles='w-full pr-12 pl-5 py-4' placeholder='نام مستعار' />
@@ -61,7 +61,7 @@ function RegisterInputs() {
 
             <Button value={loading ? "در حال ثبت‌نام..." : "ثبت‌نام"} type='submit' disabled={loading} />
 
-            <p className='mt-7 text-gray-500 tracking-tight'>حساب کاربری دارید؟ <Link to="../login" className='text-[#0065F4] font-bold underline cursor-pointer focus:outline-none focus:text-[#003d93] hover:text-[#003d93]'>ورود</Link></p>
+            <p className='mt-7 text-gray-500'>حساب کاربری دارید؟ <Link to="../login" className='text-[#0065F4] font-bold underline underline-offset-2 cursor-pointer focus:outline-none focus:text-[#003d93] hover:text-[#003d93]'>ورود</Link></p>
         </form>
     )
 }

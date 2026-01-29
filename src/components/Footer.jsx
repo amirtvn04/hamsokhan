@@ -22,7 +22,7 @@ export default function Footer() {
                         </p>
                     </div>
                     <div>
-                        <span className="font-bold text-lg">درباره‌ ما</span>
+                        <span className="font-bold ">درباره‌ ما</span>
                         <ul className="text-gray-500 tracking-tight text-sm leading-8 mt-2.5">
                             <li><Link className="hover:text-gray-900">معرفی پلتفرم</Link></li>
                             <li><Link className="hover:text-gray-900">تماس با ما</Link></li>
@@ -30,7 +30,7 @@ export default function Footer() {
                         </ul>
                     </div>
                     <div>
-                        <span className="font-bold text-lg">راهنما</span>
+                        <span className="font-bold ">راهنما</span>
                         <ul className="text-gray-500 tracking-tight text-sm leading-8 mt-2.5">
                             <li><Link className="hover:text-gray-900">قوانین و مقررات</Link></li>
                             <li><Link className="hover:text-gray-900">راهنمای استفاده</Link></li>
@@ -38,7 +38,7 @@ export default function Footer() {
                         </ul>
                     </div>
                     <div>
-                        <span className="font-bold text-lg">پشتیبانی</span>
+                        <span className="font-bold ">پشتیبانی</span>
                         <ul className="text-gray-500 tracking-tight text-sm leading-8 mt-2.5">
                             <li><Link className="hover:text-gray-900">گزارش مشکل</Link></li>
                             <li><Link className="hover:text-gray-900">حریم خصوصی</Link></li>
@@ -46,7 +46,7 @@ export default function Footer() {
                         </ul>
                     </div>
                 </div>
-                <p className="text-gray-500 text-sm my-4 text-center">© ۱۴۰۴ هم‌سخن. تمامی حقوق محفوظ است.</p>
+                <p className="text-gray-500 text-xs my-4 text-center">© ۱۴۰۴ هم‌سخن. تمامی حقوق محفوظ است.</p>
             </div>
         </footer>
     )
