@@ -11,7 +11,7 @@ function Home() {
           <div className="flex flex-col items-center flex-1 justify-center bg-linear-to-b from-[#2564eb23] to-[#fafafa] w-full shrink-0">
             <div className="container-uni flex flex-col py-20">
               <h1 className="font-doran text-3xl font-bold">جامعه دانشجویی آنلاین دانشگاه‌های ایران</h1>
-              <p className="text-xl text-gray-500 mt-7 font-semibold">بزرگ‌ترین تالار گفت‌وگوی دانشجویی برای تبادل دانش، تجربه و یافتن پاسخ پرسش‌های درسی و دانشگاهی</p>
+              <p className="text-xl text-gray-500 mt-7 font-semibold tracking-rtl-tighter">بزرگ‌ترین تالار گفت‌وگوی دانشجویی برای تبادل دانش، تجربه و یافتن پاسخ پرسش‌های درسی و دانشگاهی</p>
               <div className="flex items-center gap-x-3 mt-16 mx-auto">
                 <Link to="/register" className="px-9 py-2.5 rounded-lg bg-primary text-white hover:shadow-[0_2px_20px_rgba(0,101,244,0.4)] focus:shadow-[0_2px_20px_rgba(0,101,244,0.4)] transition-all font-semibold">
                   عضویت رایگان

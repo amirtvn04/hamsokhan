@@ -1,54 +1,45 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 import Circle from "./elements/Circle"
 
-export default function TopicCard({ title, author, views, replys, time }) {
-    return (
-        <div className="py-5 px-6 rounded-lg bg-white border border-black/15 hover:border-[#0065F4] transition-colors duration-200">
-            <div className="flex items-start justify-between">
-                <div>
+export default function TopicCard({ title, author, views, replys, time, major }) {
+    const word = author.split(' ').map(word => word.charAt(0)).join('').toUpperCase().slice(0, 1);
 
+    return (
+        <div className="py-4 px-5 rounded-lg bg-white border border-black/15 flex items-start justify-between hover:border-[#0065F4] transition-colors duration-200">
+            <div className="flex items-center gap-x-3 flex-1">
+                <div className="w-12 h-12 rounded-full bg-sky-100 text-sky-600 flex justify-center items-center text-lg font-semibold">
+                    {word}
+                </div>
+                <div>
                     <Link>
                         <h5 className="font-semibold">{title}</h5>
                     </Link>
-                    <p className="text-gray-500 text-sm mt-2">بحث درباره پروژه ها، درس ها و تکنولوژی های جدید</p>
+                    <div className="text-gray-500 flex items-center gap-x-2 mt-2 mr-1.5 text-sm">
+                        <span>{author}</span>
+                        <Circle />
+                        <span>{major}</span>
+                    </div>
                 </div>
-
-                <svg className="w-6 h-6">
-                    <use href="#chevron-left"></use>
-                </svg>
             </div>
 
-            <div className="border-t border-black/15 w-full my-4"></div>
-
-            <div className="text-gray-500 flex items-center justify-between mt-2 mr-1.5 text-sm w-full">
-                <div className="flex items-center gap-x-8">
-                    <div className="flex items-center gap-x-1">
-                        <svg className="w-5 h-5 text-gray-500">
-                            <use href="#message"></use>
-                        </svg>
-                        {views}
-                        {" "}
-                        تاپیک
-                    </div>
-                    <div className="flex items-center gap-x-1">
-                        <svg className="w-5 h-5 text-gray-500">
-                            <use href="#people"></use>
-                        </svg>
-                        {replys}
-                        {" "}
-                        پست
-                    </div>
+            <div className="flex items-center gap-x-8 text-gray-500 text-sm basis-1/4">
+                <div className="flex items-center gap-x-1">
+                    <svg className="w-5 h-5">
+                        <use href="#message"></use>
+                    </svg>
+                    {views}
                 </div>
-                <div className="flex items-center gap-x-2">
-                    <div className="flex items-center gap-x-1">
-                        <svg className="w-5 h-5 text-gray-500">
-                            <use href="#clock"></use>
-                        </svg>
-                        <span className="text-black">{author}</span>
-                    </div>
-                    <Circle />
-                    <span className="text-gray-500 text-sm">{time}</span>
+                <div className="flex items-center gap-x-1">
+                    <svg className="w-5 h-5">
+                        <use href="#eye"></use>
+                    </svg>
+                    {replys}
                 </div>
+            </div>
+            <div className="text-left">
+                <span className="text-black text-sm inline-block font-semibold">سارا احمدی</span>
+                <div className="flex-1"></div>
+                <span className="text-gray-500 text-sm inline-block mt-1.5">{time}</span>
             </div>
         </div>
     )

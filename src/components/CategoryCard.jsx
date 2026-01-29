@@ -15,13 +15,13 @@ export default function CategoryCard({ title, subtitle, topics, forums, icon, in
     const color = colorVariants[index];
 
     return (
-        <div className="bg-white border border-black/15 rounded-lg px-6 py-6 hover:border-[#0065F4] transition-colors duration-200">
-            <div className={`p-3 rounded-lg ${color.bg} border ${color.border} inline-block `} >
+        <div className="group bg-white border border-black/15 rounded-lg px-6 py-6 hover:border-[#0065F4] transition-colors duration-200">
+            <div className={`p-3 rounded-lg ${color.bg} border ${color.border} inline-block group-hover:scale-115 transition duration-200`} >
                 <svg className={`w-6 h-6 ${color.text}`}>
                     <use href={"#" + icon}></use>
                 </svg>
             </div>
-            <Link>
+            <Link to='/forums'>
                 <h5 className="tex font-semibold mt-3">{title}</h5>
             </Link>
             <p className="line-clamp-2 text-gray-500 mt-1 text-sm leading-6 min-h-12">{subtitle}</p>

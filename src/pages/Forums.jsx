@@ -1,10 +1,10 @@
 import InputField from "../components/elements/InputField"
-import TopicCard from "../components/TopicCard"
+import ForumCard from "../components/ForumCard"
 
 function Forums() {
   return (
     <main className='pt-15.5 container-uni'>
-      <div className="mt-8">
+      <section className="mt-8">
         <h3>انجمن‌های دانشجویی</h3>
         <p className="text-gray-500 font-semibold mt-3 mb-8">انجمن مورد نظر خود را انتخاب کنید و در گفتگوها شرکت کنید</p>
         <div className="flex items-stretch gap-x-3.5">
@@ -18,25 +18,25 @@ function Forums() {
             </select>
           </div>
         </div>
-      </div>
+      </section>
 
       <section className="mt-8">
-        <h3 className="mb-6">رشته های مهندسی</h3>
+        <h3 className="mb-5 text-lg">رشته های مهندسی</h3>
         <div className="space-y-3">
-          <TopicCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
-          <TopicCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
-          <TopicCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
-          <TopicCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
+          <ForumCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
+          <ForumCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
+          <ForumCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
+          <ForumCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
         </div>
       </section>
 
       <section className="mt-8">
-        <h3 className="mb-6">علوم پایه</h3>
+        <h3 className="mb-5 text-lg">علوم پایه</h3>
         <div className="space-y-3">
-          <TopicCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
-          <TopicCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
-          <TopicCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
-          <TopicCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
+          <ForumCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
+          <ForumCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
+          <ForumCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
+          <ForumCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
         </div>
       </section>
 
