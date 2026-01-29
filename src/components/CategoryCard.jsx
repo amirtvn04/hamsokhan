@@ -16,7 +16,7 @@ export default function CategoryCard({ title, subtitle, topics, forums, icon, in
 
     return (
         <div className="bg-white border border-black/15 rounded-lg px-6 py-6 hover:border-[#0065F4] transition-colors duration-200">
-            <div className={`p-3.5 rounded-lg ${color.bg} border ${color.border} inline-block `} >
+            <div className={`p-3 rounded-lg ${color.bg} border ${color.border} inline-block `} >
                 <svg className={`w-6 h-6 ${color.text}`}>
                     <use href={"#" + icon}></use>
                 </svg>

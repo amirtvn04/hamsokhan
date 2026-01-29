@@ -4,10 +4,10 @@ import InputField from "../components/elements/InputField"
 function Category() {
   return (
     <main className='pt-15.5 container-uni'>
-      <div className="mt-12">
+      <div className="mt-8">
         <h3>دسته‌بندی‌های انجمن</h3>
         <p className="text-gray-500 font-semibold mt-3 mb-8">دسته‌بندی مورد نظر خود را انتخاب کنید تا انجمن‌های مرتبط را مشاهده کنید</p>
-        <InputField icon='search' type='text' CustomStyles='w-full pr-12 pl-5 py-3 bg-white' placeholder='جستجو در بین انجمن‌ها...' />
+        <InputField icon='search' type='text' CustomStyles='w-full pr-12 pl-5 py-3 bg-white' placeholder='جستجو در بین دسته‌بندی‌ها...' />
       </div>
 
       <div className="grid grid-cols-4 gap-3.5 mt-8 mb-8">
@@ -29,7 +29,7 @@ function Category() {
         </div>
       </div>
         
-      <div className="grid grid-cols-4 gap-3.5 mb-30">
+      <section className="grid grid-cols-4 gap-3.5">
             <CategoryCard index='0' title='مهندسی کامپیوتر' subtitle='برنامه‌نویسی، الگوریتم، هوش مصنوعی و تکنولوژی' topics='۱۵,۳۰۰'forums='۳' icon='code' />
             <CategoryCard index='1' title='مهندسی برق و الکترونیک' subtitle='مدارها، سیگنال‌ها و سیستم‌های دیجیتال' topics='۴,۵۷۷'forums='۵' icon='science' />
             <CategoryCard index='2' title='فرصت های شغلی' subtitle='فیزیک، شیمی و زیست‌شناسی' topics='۳,۴۳۲'forums='۲' icon='suitcase' />
@@ -46,7 +46,7 @@ function Category() {
             <CategoryCard index='3' title='زندگی دانشجویی' subtitle='خوابگاه، تغذیه و فعالیت‌های دانشجویی' topics='۶,۴۴۳'forums='۷' icon='education' />
             <CategoryCard index='4' title='پروژه ها و ایده ها' subtitle='فیزیک، شیمی و زیست‌شناسی' topics='۶,۶۶۴'forums='۴' icon='idea' />
             <CategoryCard index='5' title='گفتگوی آزاد' subtitle='فیزیک، شیمی و زیست‌شناسی' topics='۲,۳۲۴'forums='۲' icon='tea' />
-      </div>
+      </section>
     </main>
   )
 }

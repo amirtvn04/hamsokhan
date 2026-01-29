@@ -29,11 +29,11 @@
     }
 
     .tracking-rtl-tight {
-        word-spacing:-0.1em;
+        word-spacing: -0.1em;
     }
 
     .tracking-rtl-tighter {
-        word-spacing:-0.2em;
+        word-spacing: -0.2em;
     }
 
     .bg-primary {
@@ -143,5 +143,11 @@
         position: relative;
         transition-property: transform;
         display: block;
+    }
+
+    .custom-select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
     }
 }

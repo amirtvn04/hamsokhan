@@ -107,7 +107,7 @@ function Home() {
 
       <section>
         <div className="container-uni">
-          <div className="flex items-center justify-between gap-x-6 bg-primary rounded-lg px-15 py-17 my-30">
+          <div className="flex items-center justify-between gap-x-6 bg-primary rounded-lg px-15 py-17 mt-12">
             <div className="w-[55%] text-white">
               <h5 className="text-xl font-doran font-bold">به جمع دانشجویان فعال بپیوندید!</h5>
               <p className="mt-6 text-lg leading-9 text-white/90">به جمع هم‌سخن‌ها بپیوندید و در فضایی امن و دوستانه، سؤال بپرسید، تجربه‌هایتان را به اشتراک بگذارید و از دانش و تجربه دیگران استفاده کنید.</p>

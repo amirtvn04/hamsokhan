@@ -5,7 +5,7 @@ function InputField({ icon, type, CustomStyles, ...props }) {
     const [showPassword, setShowPassword] = useState(false);
 
     return (
-        <div className="relative group">
+        <div className="relative group w-full">
             <svg className="absolute top-1/2 transform -translate-y-1/2 right-5 w-6 h-6 text-gray-500 pointer-events-none group-focus-within:text-black">
                 <use href={`#${icon}`}></use>
             </svg>
@@ -16,7 +16,7 @@ function InputField({ icon, type, CustomStyles, ...props }) {
                 </svg>
             )}
 
-            <input type={showPassword && isPassword ? 'text' : type} {...props} className={`input_field  border border-black/30 rounded-xl hover:border-black/75 focus:outline-[#0065F4] focus:border-[#0065F4] focus:outline-2 transition-all  ${CustomStyles}`} />
+            <input type={showPassword && isPassword ? 'text' : type} {...props} className={`input_field  border border-black/15 rounded-xl hover:border-[#0065F4] focus:outline-[#0065F4] focus:border-[#0065F4] focus:outline-2 transition-all  ${CustomStyles}`} />
         </div >
 
     )
