@@ -32,7 +32,7 @@ function LoginInputs() {
             </Link>
 
             <h3 className='mt-7'>به هم‌سخن خوش آمدید!</h3>
-            <p className='text-gray-500 mt-1 mb-12 tracking-tight'>برای دسترسی به تالارهای گفتگو وارد حساب کاربری خود شوید</p>
+            <p className='text-gray-500 mt-1 mb-12 tracking-tighter [word-spacing:-3px]'>برای دسترسی به تالارهای گفتگو وارد حساب کاربری خود شوید</p>
 
             <div className='space-y-3.5 w-full'>
                 <InputField value={email} onChange={(e) => setEmail(e.target.value)} icon='person' type='text' CustomStyles='w-full pr-12 pl-5 py-4' placeholder='ایمیل یا شماره دانشجویی' />

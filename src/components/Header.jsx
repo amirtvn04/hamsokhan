@@ -20,21 +20,21 @@ export default function Header() {
     return (
         <header className={clsx('bg-white border-b border-black/15 w-full fixed top-0 right-0 transition-all duration-300', !visible && 'transform -translate-y-20')}>
             <div className="container-uni flex justify-between items-center py-3">
-                <div className="flex items-center gap-x-14">
+                <div className="flex items-center gap-x-12">
                     <Link className="flex items-center gap-x-2">
-                        <div to="/" className='bg-primary w-10 h-10 rounded-lg flex items-center justify-center text-[24px] text-white'>
+                        <div to="/" className='bg-primary w-9 h-9 rounded-lg flex items-center justify-center text-[22px] text-white'>
                             هـ
                         </div>
-                        <span className="text-xl font-bold">هم‌سخن</span>
+                        <span className="text-xl font-semibold">هم‌سخن</span>
                     </Link>
-                    <nav className="flex items-center gap-x-6 font-bold">
+                    <nav className="flex items-center gap-x-6 font-semibold">
                         <NavLink className="hover:text-[#0065F4] transition duration-200" to='/'>خانه</NavLink>
                         <NavLink className="hover:text-[#0065F4] transition duration-200" to='/forums'>انجمن‌ها</NavLink>
                         <NavLink className="hover:text-[#0065F4] transition duration-200" to='/category'>دسته‌بندی‌ها</NavLink>
                         <NavLink className="hover:text-[#0065F4] transition duration-200" to='/chat'>گفتگوی زنده</NavLink>
                     </nav>
                 </div>
-                <div className="flex items-center gap-x-3 font-bold ">
+                <div className="flex items-center gap-x-3 font-semibold">
                     <Link to="/login" className="flex items-center gap-x-1 hover:bg-black/5 rounded-lg px-7 py-1.5 border border-[rgba(0,0,0,0)] hover:border-black/15 transition-colors">
                         <svg className="w-6 h-6">
                             <use href="#door-in"></use>

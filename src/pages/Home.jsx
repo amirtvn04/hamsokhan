@@ -7,7 +7,7 @@ function Home() {
   return (
     <main>
       <section>
-        <div className="text-center min-h-screen flex flex-col justify-center items-center pt-16 pb-16">
+        <div className="text-center min-h-screen flex flex-col justify-center items-center pt-15.5">
           <div className="flex flex-col items-center flex-1 justify-center bg-linear-to-b from-[#2564eb23] to-[#fafafa] w-full shrink-0">
             <div className="container-uni flex flex-col py-20">
               <h1 className="font-doran text-4xl font-bold">جامعه دانشجویی آنلاین دانشگاه‌های ایران</h1>
@@ -49,8 +49,8 @@ function Home() {
         </div>
       </section>
 
-      <section className="mt-14">
-        <div className="container-uni">
+      <section>
+        <div className="container-uni mt-30">
           <div className="flex justify-between items-center mb-6">
             <h3>دسته بندی های محبوب</h3>
             <Link to='/category' className="flex text-lg items-center text-primary hover:text-[#003d93] transition-colors hover:bg-[rgba(0,102,244,0.05)] hover:border-[rgba(0,102,244,0.20)] rounded-lg px-4 py-2 border border-[rgba(0,0,0,0)]">
