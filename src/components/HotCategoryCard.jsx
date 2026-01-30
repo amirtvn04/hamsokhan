@@ -15,8 +15,8 @@ export default function HotCategoryCard({ title, counter, icon, index = 0 }) {
     const color = colorVariants[index];
     
     return (
-        <div className="bg-white border border-black/15 rounded-lg px-7 py-6 hover:border-[#0065F4] transition-colors duration-200">
-            <div className={`p-3 rounded-lg ${color.bg} border ${color.border} inline-block `} >
+        <div className="group bg-white border border-black/15 rounded-lg px-7 py-6 hover:border-[#0065F4] transition-colors duration-200">
+            <div className={`p-3 rounded-lg ${color.bg} border ${color.border} inline-block group-hover:scale-110 transition duration-200`} >
                 <svg className={`w-6 h-6 ${color.text}`}>
                     <use href={"#" + icon}></use>
                 </svg>

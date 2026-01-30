@@ -1,17 +1,14 @@
 import { Link } from "react-router-dom"
 import Circle from "./elements/Circle"
+import AvatarPic from "./AvatarPic"
 
 export default function TopicCard({ title, author, views, replys, time, major }) {
-    const word = author.split(' ').map(word => word.charAt(0)).join('').toUpperCase().slice(0, 1);
-
     return (
         <div className="py-4 px-5 rounded-lg bg-white border border-black/15 flex items-start justify-between hover:border-[#0065F4] transition-colors duration-200">
             <div className="flex items-center gap-x-3 flex-1">
-                <div className="w-12 h-12 rounded-full bg-sky-100 text-sky-600 flex justify-center items-center text-lg font-semibold">
-                    {word}
-                </div>
+                <AvatarPic author={author} size='0' />
                 <div>
-                    <Link>
+                    <Link to='/topics/4'>
                         <h5 className="font-semibold">{title}</h5>
                     </Link>
                     <div className="text-gray-500 flex items-center gap-x-2 mt-2 mr-1.5 text-sm">
