@@ -3,7 +3,7 @@ import Circle from "./elements/Circle"
 
 export default function HotTopicCard({ title, author, views, replys, time }) {
     return (
-        <div className="py-4 px-5 rounded-lg bg-white border border-black/15 flex items-start justify-between hover:border-[#0065F4] transition-colors duration-200">
+        <div className="py-4 px-5 rounded-lg bg-white border border-black/15 flex items-start justify-between hover:border-[#0065F4] transition-colors duration-150">
             <div>
                 <Link>
                     <h5 className="font-semibold">{title}</h5>

@@ -4,9 +4,9 @@ import AvatarPic from "./AvatarPic"
 
 export default function TopicCard({ title, author, views, replys, time, major }) {
     return (
-        <div className="py-4 px-5 rounded-lg bg-white border border-black/15 flex items-start justify-between hover:border-[#0065F4] transition-colors duration-200">
+        <div className="py-4 px-5 rounded-lg bg-white border border-black/15 flex items-start justify-between hover:border-[#0065F4] transition-colors duration-150">
             <div className="flex items-center gap-x-3 flex-1">
-                <AvatarPic author={author} size='0' />
+                <AvatarPic author={author} size='1' />
                 <div>
                     <Link to='/topics/4'>
                         <h5 className="font-semibold">{title}</h5>

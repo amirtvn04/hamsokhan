@@ -61,16 +61,16 @@ function Forum() {
               <svg className="absolute w-5 h-5 right-4 top-1/2 transform -translate-y-1/2">
                 <use href="#clock"></use>
               </svg>
-              <select className="h-10 custom-select border border-black/15 rounded-lg pr-10 pl-10 hover:border-[#0065F4] focus:outline-2 focus:border-[#0065F4] focus:outline-[#0065F4] transition duration-200" name="" id="">
+              <select className="h-10 custom-select border border-black/15 rounded-lg pr-10 pl-10 hover:border-[#0065F4] focus:outline-2 focus:border-[#0065F4] focus:outline-[#0065F4] transition duration-150" name="" id="">
                 <option value="">جدید ترین</option>
               </select>
             </div>
 
-            <select className="h-10 custom-select border border-black/15 rounded-lg px-4 hover:border-[#0065F4] focus:outline-2 focus:border-[#0065F4] focus:outline-[#0065F4] transition duration-200" name="" id="">
+            <select className="h-10 custom-select border border-black/15 rounded-lg px-4 hover:border-[#0065F4] focus:outline-2 focus:border-[#0065F4] focus:outline-[#0065F4] transition duration-150" name="" id="">
               <option value="">محبوب ترین</option>
             </select>
 
-            <select className="h-10 custom-select border border-black/15 rounded-lg px-4 hover:border-[#0065F4] focus:outline-2 focus:border-[#0065F4] focus:outline-[#0065F4] transition duration-200" name="" id="">
+            <select className="h-10 custom-select border border-black/15 rounded-lg px-4 hover:border-[#0065F4] focus:outline-2 focus:border-[#0065F4] focus:outline-[#0065F4] transition duration-150" name="" id="">
               <option value="">بدون پاسخ</option>
             </select>
           </div>
@@ -86,7 +86,7 @@ function Forum() {
         <TopicCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' major='دانشجوی کامپیوتر' />
         <TopicCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' major='دانشجوی کامپیوتر' />
       </section>
-      
+
       <div className="flex">
         <div className="pagination flex items-center text-center gap-x-1 mt-5 mx-auto">
           <div className="bg-white px-2 py-1.5 min-w-10 rounded-lg border border-black/15">قبلی</div>

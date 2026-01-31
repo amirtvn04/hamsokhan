@@ -4,7 +4,7 @@ import ForumCard from "../components/ForumCard"
 function Forums() {
   return (
     <main className='pt-15.5 container-uni'>
-      <section className="mt-8">
+      <section className="mt-6">
         <h3>انجمن‌های دانشجویی</h3>
         <p className="text-gray-500 font-semibold mt-3 mb-8">انجمن مورد نظر خود را انتخاب کنید و در گفتگوها شرکت کنید</p>
         <div className="flex items-stretch gap-x-3.5">
@@ -13,7 +13,7 @@ function Forums() {
             <svg className="absolute w-5 h-5 -rotate-90 left-4 top-1/2 transform -translate-y-1/2">
               <use href="#chevron-left"></use>
             </svg>
-            <select className="custom-select h-full w-46 border border-black/15 rounded-lg pr-4 pl-8 hover:border-[#0065F4] focus:outline-2 focus:border-[#0065F4] focus:outline-[#0065F4] transition duration-200" name="" id="">
+            <select className="custom-select h-full w-46 border border-black/15 rounded-lg pr-4 pl-8 hover:border-[#0065F4] focus:outline-2 focus:border-[#0065F4] focus:outline-[#0065F4] transition duration-150" name="" id="">
               <option value="">همه دسته‌بندی‌ها</option>
             </select>
           </div>

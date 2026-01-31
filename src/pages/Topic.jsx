@@ -36,9 +36,9 @@ export default function Topic() {
       <section className="mt-7 space-y-3">
         <div className="flex items-start gap-x-9 border border-black/15 py-6 px-9 rounded-lg bg-white">
           <div className="max-w-32.5 flex flex-col items-center">
-            <AvatarPic author='تست' size='1' />
+            <AvatarPic author='تست' size='2' />
             <span className="mt-1.5 font-semibold">علی محمدی</span>
-            <span className="bg-sky-100 text-sky-700 rounded-lg text-xs font-semibold px-2 py-1 mt-1.5">دانشجوی کارشناسی</span>
+            <span className="bg-blue-100 text-blue-700 rounded-lg text-xs font-semibold px-2 py-1 mt-1.5">دانشجوی کارشناسی</span>
             <div className="text-gray-500 flex flex-col text-center text-xs mt-1.5 gap-y-0.5">
               <span>دانشگاه تهران</span>
               <span>۲۳۴ پست</span>
@@ -72,19 +72,19 @@ export default function Topic() {
 
             <div className="flex items-center justify-between mt-6 text-sm">
               <div className="flex items-center gap-x-4">
-                <div className="flex items-center gap-x-1 font-semibold hover:bg-sky-100 px-2 py-2 rounded-lg transition duration-200">
+                <div className="flex items-center gap-x-1 font-semibold hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
                   <svg className="w-4.5 h-4.5">
                     <use href="#arrow-top"></use>
                   </svg>
                   <span>۴۵</span>
                 </div>
-                <div className="flex items-center gap-x-1 font-semibold hover:bg-sky-100 px-2 py-2 rounded-lg transition duration-200">
+                <div className="flex items-center gap-x-1 font-semibold hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
                   <svg className="w-4.5 h-4.5">
                     <use href="#reply"></use>
                   </svg>
                   <span>پاسخ</span>
                 </div>
-                <div className="hover:bg-sky-100 px-2 py-2 rounded-lg transition duration-200">
+                <div className="hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
                   <svg className="w-4.5 h-4.5">
                     <use href="#share"></use>
                   </svg>
@@ -109,7 +109,7 @@ export default function Topic() {
         </div>
         <div className="flex items-start gap-x-9 border border-black/15 py-6 px-9 rounded-lg bg-white">
           <div className="max-w-32.5 flex flex-col items-center">
-            <AvatarPic author='سارا' size='1' />
+            <AvatarPic author='سارا' size='2' />
             <span className="mt-1.5 font-semibold">سارا احمدی</span>
             <span className="bg-green-100 text-green-700 rounded-lg text-xs font-semibold px-2 py-1 mt-1.5">فارغ التحصیل</span>
             <div className="text-gray-500 flex flex-col text-center text-xs mt-1.5 gap-y-0.5">
@@ -131,19 +131,19 @@ export default function Topic() {
 
             <div className="flex items-center justify-between mt-6 text-sm">
               <div className="flex items-center gap-x-4">
-                <div className="flex items-center gap-x-1 font-semibold hover:bg-sky-100 px-2 py-2 rounded-lg transition duration-200">
+                <div className="flex items-center gap-x-1 font-semibold hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
                   <svg className="w-4.5 h-4.5">
                     <use href="#arrow-top"></use>
                   </svg>
                   <span>۴۵</span>
                 </div>
-                <div className="flex items-center gap-x-1 font-semibold hover:bg-sky-100 px-2 py-2 rounded-lg transition duration-200">
+                <div className="flex items-center gap-x-1 font-semibold hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
                   <svg className="w-4.5 h-4.5">
                     <use href="#reply"></use>
                   </svg>
                   <span>پاسخ</span>
                 </div>
-                <div className="hover:bg-sky-100 px-2 py-2 rounded-lg transition duration-200">
+                <div className="hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
                   <svg className="w-4.5 h-4.5">
                     <use href="#share"></use>
                   </svg>
@@ -168,9 +168,9 @@ export default function Topic() {
         </div>
         <div className="flex items-start gap-x-9 border border-black/15 py-6 px-9 rounded-lg bg-white">
           <div className="max-w-32.5 flex flex-col items-center">
-            <AvatarPic author='تست' size='1' />
+            <AvatarPic author='تست' size='2' />
             <span className="mt-1.5 font-semibold">علی محمدی</span>
-            <span className="bg-sky-100 text-sky-700 rounded-lg text-xs font-semibold px-2 py-1 mt-1.5">دانشجوی کارشناسی</span>
+            <span className="bg-blue-100 inline-block text-blue-700 rounded-lg text-xs font-semibold px-2 py-1 mt-1.5">دانشجوی کارشناسی</span>
             <div className="text-gray-500 flex flex-col text-center text-xs mt-1.5 gap-y-0.5">
               <span>دانشگاه تهران</span>
               <span>۲۳۴ پست</span>
@@ -190,19 +190,19 @@ export default function Topic() {
 
             <div className="flex items-center justify-between mt-6 text-sm">
               <div className="flex items-center gap-x-4">
-                <div className="flex items-center gap-x-1 font-semibold hover:bg-sky-100 px-2 py-2 rounded-lg transition duration-200">
+                <div className="flex items-center gap-x-1 font-semibold hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
                   <svg className="w-4.5 h-4.5">
                     <use href="#arrow-top"></use>
                   </svg>
                   <span>۴۵</span>
                 </div>
-                <div className="flex items-center gap-x-1 font-semibold hover:bg-sky-100 px-2 py-2 rounded-lg transition duration-200">
+                <div className="flex items-center gap-x-1 font-semibold hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
                   <svg className="w-4.5 h-4.5">
                     <use href="#reply"></use>
                   </svg>
                   <span>پاسخ</span>
                 </div>
-                <div className="hover:bg-sky-100 px-2 py-2 rounded-lg transition duration-200">
+                <div className="hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
                   <svg className="w-4.5 h-4.5">
                     <use href="#share"></use>
                   </svg>
@@ -228,7 +228,7 @@ export default function Topic() {
         <div className="border border-black/15 py-6 px-9 rounded-lg bg-white">
           <span className="inline-block font-semibold">پاسخ خود را بنویسید</span>
 
-          <textarea className="w-full border mt-3 bg-black/5 border-black/15 rounded-lg min-h-40 p-4" name="" id="" placeholder="پاسخ خود را بنویسید..."></textarea>
+          <textarea className="w-full border mt-3 bg-black/5 border-black/15 rounded-lg min-h-40 p-4 hover:border-[#0065F4] focus:outline-2 outline-[#0065F4] focus:border-[#0065F4] transition-all duration-150" name="" id="" placeholder="پاسخ خود را بنویسید..."></textarea>
 
           <div className="flex justify-between items-center mt-3">
             <span className="text-sm text-nowrap text-gray-500">توضیحات پاسخ</span>

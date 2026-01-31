@@ -16,7 +16,7 @@ function InputField({ icon, type, CustomStyles, ...props }) {
                 </svg>
             )}
 
-            <input type={showPassword && isPassword ? 'text' : type} {...props} className={`input_field  border border-black/15 rounded-xl hover:border-[#0065F4] focus:outline-[#0065F4] focus:border-[#0065F4] focus:outline-2 transition-all  ${CustomStyles}`} />
+            <input type={showPassword && isPassword ? 'text' : type} {...props} className={`input_field tracking-rtl-tight border border-black/15 rounded-xl hover:border-[#0065F4] focus:outline-[#0065F4] focus:border-[#0065F4] focus:outline-2 transition-all  ${CustomStyles}`} />
         </div >
 
     )

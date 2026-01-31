@@ -3,7 +3,7 @@ import Circle from "./elements/Circle"
 
 export default function ForumCard({ title, author, views, replys, time }) {
     return (
-        <div className="py-5 px-6 rounded-lg bg-white border border-black/15 hover:border-[#0065F4] transition-colors duration-200">
+        <div className="py-5 px-6 rounded-lg bg-white border border-black/15 hover:border-[#0065F4] transition-colors duration-150">
             <div className="flex items-start justify-between">
                 <div>
 

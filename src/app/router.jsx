@@ -27,25 +27,21 @@ export const router = createBrowserRouter([
       { path: "/topics/:id", element: <Topic /> },
 
       {
-        path: "/chat",
-        element: (
-          <ProtectedRoute>
-            <LiveChat />
-          </ProtectedRoute>
-        ),
-      },
-
-      {
         path: "/profile",
         element: (
-          <ProtectedRoute>
             <Profile />
-          </ProtectedRoute>
         ),
       },
     ],
   },
 
+  {
+        path: "/chat",
+        element: (
+            <LiveChat />
+        ),
+      },
+      
   {
     element: <AuthLayout />,
     children: [
