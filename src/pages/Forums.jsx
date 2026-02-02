@@ -1,7 +1,14 @@
 import InputField from "../components/elements/InputField"
 import ForumCard from "../components/ForumCard"
+import { useForums } from "../features/forums/useForums"
 
 function Forums() {
+  const { forums, loading } = useForums();
+
+  if (loading) {
+    return (<div className="mt-22">صبر کن</div>)
+  }
+
   return (
     <main className='pt-15.5 container-uni'>
       <section className="mt-6">
@@ -20,25 +27,21 @@ function Forums() {
         </div>
       </section>
 
-      <section className="mt-8">
-        <h3 className="mb-5 text-lg">رشته های مهندسی</h3>
-        <div className="space-y-3">
-          <ForumCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
-          <ForumCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
-          <ForumCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
-          <ForumCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
-        </div>
-      </section>
-
-      <section className="mt-8">
-        <h3 className="mb-5 text-lg">علوم پایه</h3>
-        <div className="space-y-3">
-          <ForumCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
-          <ForumCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
-          <ForumCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
-          <ForumCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
-        </div>
-      </section>
+      <div className="flx">
+        {forums.map(item => (
+          <section key={item.category.id} className="mt-9">
+            <div className="flex items-center gap-x-3 mb-5">
+              <h3 className="text-xl mr-3">{item.category.title}</h3>
+              <div className="flex-1 border-t border-black/15"></div>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {item.forums.map(item => (
+                <ForumCard key={item.id} {...item} author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
 
 
 

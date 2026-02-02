@@ -1,7 +1,15 @@
 import CategoryCard from "../components/CategoryCard"
 import InputField from "../components/elements/InputField"
+import { useCategories } from "../features/forums/useCategories"
 
 function Category() {
+  const { categories, loading } = useCategories();
+
+  if (loading) {
+    return (
+      <div className="mt-22">صبر کنید</div>
+    )
+  }
   return (
     <main className='pt-15.5 container-uni'>
       <div className="mt-6">
@@ -12,7 +20,7 @@ function Category() {
 
       <div className="grid grid-cols-4 gap-3.5 mt-8 mb-8">
         <div className="bg-white rounded-lg p-6 flex flex-col items-center justify-center border border-black/15 hover:border-[#0065F4] transition duration-150">
-          <span className="font-bold text-2xl">۱۶</span>
+          <span className="font-bold text-2xl">{categories.length.toLocaleString('fa-IR')}</span>
           <span className="text-sm text-gray-500">دسته بندی</span>
         </div>
         <div className="bg-white rounded-lg p-6 flex flex-col items-center justify-center border border-black/15 hover:border-[#0065F4] transition duration-150">
@@ -30,22 +38,9 @@ function Category() {
       </div>
 
       <section className="grid grid-cols-4 gap-3.5">
-        <CategoryCard index='0' title='مهندسی کامپیوتر' subtitle='برنامه‌نویسی، الگوریتم، هوش مصنوعی و تکنولوژی' topics='۱۵,۳۰۰' forums='۳' icon='code' />
-        <CategoryCard index='1' title='مهندسی برق و الکترونیک' subtitle='مدارها، سیگنال‌ها و سیستم‌های دیجیتال' topics='۴,۵۷۷' forums='۵' icon='science' />
-        <CategoryCard index='2' title='فرصت های شغلی' subtitle='فیزیک، شیمی و زیست‌شناسی' topics='۳,۴۳۲' forums='۲' icon='suitcase' />
-        <CategoryCard index='3' title='زندگی دانشجویی' subtitle='خوابگاه، تغذیه و فعالیت‌های دانشجویی' topics='۶,۴۴۳' forums='۷' icon='education' />
-        <CategoryCard index='4' title='پروژه ها و ایده ها' subtitle='فیزیک، شیمی و زیست‌شناسی' topics='۶,۶۶۴' forums='۴' icon='idea' />
-        <CategoryCard index='5' title='گفتگوی آزاد' subtitle='فیزیک، شیمی و زیست‌شناسی' topics='۲,۳۲۴' forums='۲' icon='tea' />
-        <CategoryCard index='0' title='مهندسی کامپیوتر' subtitle='برنامه‌نویسی، الگوریتم، هوش مصنوعی و تکنولوژی' topics='۱۵,۳۰۰' forums='۳' icon='code' />
-        <CategoryCard index='1' title='مهندسی برق و الکترونیک' subtitle='مدارها، سیگنال‌ها و سیستم‌های دیجیتال' topics='۴,۵۷۷' forums='۵' icon='science' />
-        <CategoryCard index='2' title='فرصت های شغلی' subtitle='فیزیک، شیمی و زیست‌شناسی' topics='۳,۴۳۲' forums='۲' icon='suitcase' />
-        <CategoryCard index='5' title='گفتگوی آزاد' subtitle='فیزیک، شیمی و زیست‌شناسی' topics='۲,۳۲۴' forums='۲' icon='tea' />
-        <CategoryCard index='0' title='مهندسی کامپیوتر' subtitle='برنامه‌نویسی، الگوریتم، هوش مصنوعی و تکنولوژی' topics='۱۵,۳۰۰' forums='۳' icon='code' />
-        <CategoryCard index='1' title='مهندسی برق و الکترونیک' subtitle='مدارها، سیگنال‌ها و سیستم‌های دیجیتال' topics='۴,۵۷۷' forums='۵' icon='science' />
-        <CategoryCard index='2' title='فرصت های شغلی' subtitle='فیزیک، شیمی و زیست‌شناسی' topics='۳,۴۳۲' forums='۲' icon='suitcase' />
-        <CategoryCard index='3' title='زندگی دانشجویی' subtitle='خوابگاه، تغذیه و فعالیت‌های دانشجویی' topics='۶,۴۴۳' forums='۷' icon='education' />
-        <CategoryCard index='4' title='پروژه ها و ایده ها' subtitle='فیزیک، شیمی و زیست‌شناسی' topics='۶,۶۶۴' forums='۴' icon='idea' />
-        <CategoryCard index='5' title='گفتگوی آزاد' subtitle='فیزیک، شیمی و زیست‌شناسی' topics='۲,۳۲۴' forums='۲' icon='tea' />
+        {categories.map(cat => (
+          <CategoryCard key={cat.id} index={cat.order_index} title={cat.title} subtitle={cat.description} slug={cat.slug} topics='۱۵,۳۰۰' forums='۳' icon='code' />
+        ))}
       </section>
     </main>
   )

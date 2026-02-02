@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Circle from "./elements/Circle"
 
-export default function ForumCard({ title, author, views, replys, time }) {
+export default function ForumCard({ title, description, author, views, replys, time }) {
     return (
         <div className="py-5 px-6 rounded-lg bg-white border border-black/15 hover:border-[#0065F4] transition-colors duration-150">
             <div className="flex items-start justify-between">
@@ -10,7 +10,7 @@ export default function ForumCard({ title, author, views, replys, time }) {
                     <Link to='/forums/5'>
                         <h5 className="font-semibold">{title}</h5>
                     </Link>
-                    <p className="text-gray-500 text-sm mt-2">بحث درباره پروژه ها، درس ها و تکنولوژی های جدید</p>
+                    <p className="text-gray-500 text-sm mt-2">{description}</p>
                 </div>
 
                 <svg className="w-6 h-6">
