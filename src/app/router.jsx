@@ -12,7 +12,9 @@ import Topic from "../pages/Topic";
 import LiveChat from "../pages/LiveChat";
 import Profile from "../pages/Profile";
 import NotFound from "../pages/NotFound";
-import Category from "../pages/Category"
+import Categories from "../pages/Categories"
+import Category from "../pages/Category";
+
 
 import ProtectedRoute from "../features/auth/ProtectedRoute";
 
@@ -21,10 +23,14 @@ export const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       { path: "/", element: <Home /> },
+
       { path: "/forums", element: <Forums /> },
-      { path: "/category", element: <Category /> },
-      { path: "/forums/:id", element: <Forum /> },
-      { path: "/topics/:id", element: <Topic /> },
+      { path: "/forums/:forumSlug", element: <Forum /> },
+
+      { path: "/categories", element: <Categories /> },
+      { path: "/categories/:categorySlug", element: <Category /> },
+
+      { path: "/topics/:topicSlug", element: <Topic /> },
 
       {
         path: "/profile",

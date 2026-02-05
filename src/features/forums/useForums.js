@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabase";
 
-export function useForums() {
+export function useForums(categorySlug = null) {
   const [forums, setForums] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -10,24 +10,28 @@ export function useForums() {
     const fetchForums = async () => {
       setLoading(true);
 
-      const { data, error } = await supabase
+      let query = supabase
         .from("forum_stats")
         .select(`
           id,
           title,
           slug,
+          description,
           category_id,
+          category_title,
+          category_slug,
           topics_count,
           posts_count,
-          description,
           last_activity_at,
-          last_author_name,
-          categories (
-            id,
-            title
-          )
+          last_author_name
         `)
         .order("last_activity_at", { ascending: false });
+
+      if (categorySlug) {
+        query = query.eq("category_slug", categorySlug);
+      }
+
+      const { data, error } = await query;
 
       if (error) {
         setError(error.message);
@@ -36,16 +40,20 @@ export function useForums() {
       }
 
       const grouped = data.reduce((acc, forum) => {
-        const category = forum.categories;
+        const categoryId = forum.category_id;
 
-        if (!acc[category.id]) {
-          acc[category.id] = {
-            category,
+        if (!acc[categoryId]) {
+          acc[categoryId] = {
+            category: {
+              id: forum.category_id,
+              title: forum.category_title,
+              slug: forum.category_slug,
+            },
             forums: [],
           };
         }
 
-        acc[category.id].forums.push(forum);
+        acc[categoryId].forums.push(forum);
         return acc;
       }, {});
 
@@ -54,7 +62,7 @@ export function useForums() {
     };
 
     fetchForums();
-  }, []);
+  }, [categorySlug]);
 
   return { forums, loading, error };
 }

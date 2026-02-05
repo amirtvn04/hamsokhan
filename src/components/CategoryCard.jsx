@@ -35,7 +35,7 @@ export default function CategoryCard({ title, description, topics_count, forums_
                     <use href={"#" + Icon}></use>
                 </svg>
             </div>
-            <Link to={`/forums/${slug}`}>
+            <Link to={`/categories/${slug}`}>
                 <h5 className="tex font-semibold mt-3">{title}</h5>
             </Link>
             <p className="line-clamp-2 text-gray-500 mt-1 text-sm leading-6 min-h-12">{description}</p>
