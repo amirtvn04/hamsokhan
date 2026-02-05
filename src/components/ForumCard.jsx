@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Circle from "./elements/Circle"
 
-export default function ForumCard({ title, description, author, views, replys, time }) {
+export default function ForumCard({ title, description, last_author_name, topics_count, posts_count, last_activity_at }) {
     return (
         <div className="py-5 px-6 rounded-lg bg-white border border-black/15 hover:border-[#0065F4] transition-colors duration-150">
             <div className="flex items-start justify-between">
@@ -26,7 +26,7 @@ export default function ForumCard({ title, description, author, views, replys, t
                         <svg className="w-5 h-5 text-gray-500">
                             <use href="#message"></use>
                         </svg>
-                        {views}
+                        {topics_count.toLocaleString('fa-IR')}
                         {" "}
                         تاپیک
                     </div>
@@ -34,7 +34,7 @@ export default function ForumCard({ title, description, author, views, replys, t
                         <svg className="w-5 h-5 text-gray-500">
                             <use href="#people"></use>
                         </svg>
-                        {replys}
+                        {posts_count.toLocaleString('fa-IR')}
                         {" "}
                         پست
                     </div>
@@ -44,10 +44,10 @@ export default function ForumCard({ title, description, author, views, replys, t
                         <svg className="w-5 h-5 text-gray-500">
                             <use href="#clock"></use>
                         </svg>
-                        <span className="text-black">{author}</span>
+                        <span className="text-black">{last_author_name}</span>
                     </div>
                     <Circle />
-                    <span className="text-gray-500 text-sm">{time}</span>
+                    <span className="text-gray-500 text-sm">{last_activity_at}</span>
                 </div>
             </div>
         </div>

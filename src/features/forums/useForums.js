@@ -11,18 +11,23 @@ export function useForums() {
       setLoading(true);
 
       const { data, error } = await supabase
-        .from("forums")
+        .from("forum_stats")
         .select(`
           id,
           title,
-          description,
+          slug,
           category_id,
+          topics_count,
+          posts_count,
+          description,
+          last_activity_at,
+          last_author_name,
           categories (
             id,
             title
           )
         `)
-        .order("created_at", { ascending: true });
+        .order("last_activity_at", { ascending: false });
 
       if (error) {
         setError(error.message);

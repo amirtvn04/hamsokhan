@@ -23,10 +23,10 @@ const colorVariants = [
     { bg: 'bg-slate-100', text: 'text-slate-600', border: 'border-slate-300' },
 ];
 
-export default function CategoryCard({ title, subtitle, topics, forums, slug, index = 0 }) {
+export default function CategoryCard({ title, description, topics_count, forums_count, slug, order_index = 0 }) {
 
     const Icon = categoryIcons[slug] || 'idea';
-    const color = colorVariants[index % colorVariants.length];
+    const color = colorVariants[order_index % colorVariants.length];
 
     return (
         <div className="group bg-white border border-black/15 rounded-lg px-6 py-6 hover:border-[#0065F4] transition-colors duration-150">
@@ -38,15 +38,15 @@ export default function CategoryCard({ title, subtitle, topics, forums, slug, in
             <Link to={`/forums/${slug}`}>
                 <h5 className="tex font-semibold mt-3">{title}</h5>
             </Link>
-            <p className="line-clamp-2 text-gray-500 mt-1 text-sm leading-6 min-h-12">{subtitle}</p>
+            <p className="line-clamp-2 text-gray-500 mt-1 text-sm leading-6 min-h-12">{description}</p>
             <div className="flex items-center justify-between text-gray-500 text-sm mt-5">
                 <span>
-                    {forums}
+                    {forums_count.toLocaleString('fa-IR')}
                     {" "}
                     انجمن
                 </span>
                 <span>
-                    {topics}
+                    {topics_count.toLocaleString('fa-IR')}
                     {" "}
                     تاپیک
                 </span>

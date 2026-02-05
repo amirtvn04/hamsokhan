@@ -3,15 +3,15 @@ import { supabase } from "../../lib/supabase";
 
 export function useCategories() {
   const [categories, setCategories] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [Categoryloading, setCategoryloading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchCategories = async () => {
-      setLoading(true);
+      setCategoryloading(true);
 
       const { data, error } = await supabase
-        .from("categories")
+        .from("category_stats")
         .select("*")
         .order("order_index", { ascending: true });
 
@@ -21,11 +21,11 @@ export function useCategories() {
         setCategories(data);
       }
 
-      setLoading(false);
+      setCategoryloading(false);
     };
 
     fetchCategories();
   }, []);
 
-  return { categories, loading, error };
+  return { categories, Categoryloading, error };
 }

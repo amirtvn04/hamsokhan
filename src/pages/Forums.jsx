@@ -36,7 +36,7 @@ function Forums() {
             </div>
             <div className="grid grid-cols-2 gap-3">
               {item.forums.map(item => (
-                <ForumCard key={item.id} {...item} author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' />
+                <ForumCard key={item.id} {...item} />
               ))}
             </div>
           </section>
