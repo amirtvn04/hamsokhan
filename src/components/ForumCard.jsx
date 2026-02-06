@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import Circle from "./elements/Circle"
 
-export default function ForumCard({ title, description, last_author_name, topics_count, posts_count, last_activity_at }) {
+export default function ForumCard({ title, description, last_author_name, topics_count, posts_count, last_activity_at, slug }) {
     return (
         <div className="py-5 px-6 rounded-lg bg-white border border-black/15 hover:border-[#0065F4] transition-colors duration-150">
             <div className="flex items-start justify-between">
                 <div>
 
-                    <Link to='/forums/5'>
+                    <Link to={`/forums/${slug}`}>
                         <h5 className="font-semibold">{title}</h5>
                     </Link>
                     <p className="text-gray-500 text-sm mt-2">{description}</p>

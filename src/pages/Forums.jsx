@@ -27,7 +27,7 @@ function Forums() {
         </div>
       </section>
 
-      <div className="flx">
+      <div>
         {forums.map(item => (
           <section key={item.category.id} className="mt-9">
             <div className="flex items-center gap-x-3 mb-5">

@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom"
 import TopicCard from "../components/TopicCard"
+import { useParams } from "react-router-dom"
+import { useTopics } from "../features/topics/useTopics"
 
 function Forum() {
+  const { forumSlug } = useParams()
+  const {topics, topicLoading} = useTopics(forumSlug)
+  console.log(forumSlug)
+  console.log(topics)
+
   return (
     <main className="pt-15.5 container-uni">
       <section className="mt-6">
@@ -79,12 +86,10 @@ function Forum() {
       </section>
 
       <section className="mt-5 space-y-3">
-        <TopicCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' major='دانشجوی کامپیوتر' />
-        <TopicCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' major='دانشجوی کامپیوتر' />
-        <TopicCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' major='دانشجوی کامپیوتر' />
-        <TopicCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' major='دانشجوی کامپیوتر' />
-        <TopicCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' major='دانشجوی کامپیوتر' />
-        <TopicCard title='آموزش Git و GitHub برای مبتدی‌ها' author='علی محمدی' replys='۴۴' views='۷۷۶' time='۲ ساعت پیش' major='دانشجوی کامپیوتر' />
+        {topics.map(item => (
+          <TopicCard key={item.topic_id} {...item} />
+        ))}
+
       </section>
 
       <div className="flex">
