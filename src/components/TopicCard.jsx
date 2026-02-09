@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import Circle from "./elements/Circle"
 import AvatarPic from "./AvatarPic"
-import { timeAgo } from "../utils/date"
+import { timeAgo } from "../utils/timeAgo"
 import { academic_degree } from "../utils/degrees"
 
 export default function TopicCard({ topic_id, topic_title, author_name, author_status, posts_count, created_at }) {

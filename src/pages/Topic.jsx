@@ -3,7 +3,7 @@ import Circle from "../components/elements/Circle"
 import { Link } from "react-router-dom"
 import { useParams } from "react-router-dom"
 import { useTopic } from "../features/topics/useTopic"
-import { timeAgo } from "../utils/date"
+import { timeAgo } from "../utils/timeAgo"
 import EducationStatus from "../components/elements/EducationStatus"
 
 export default function Topic() {
@@ -46,175 +46,123 @@ export default function Topic() {
           <div className="max-w-32.5 flex flex-col items-center">
             <AvatarPic author={topic?.author_name} size='2' />
             <span className="mt-1.5 font-semibold">{topic?.author_name}</span>
-            <EducationStatus degree='bachelor' />
+            <EducationStatus degree={topic?.author_status} />
             <div className="text-gray-500 flex flex-col text-center text-xs mt-1.5 gap-y-0.5">
               <span>دانشگاه تهران</span>
               <span>۲۳۴ پست</span>
               <span>عضو از ۱۴۰۱</span>
             </div>
           </div>
-          <div className="flex-1">
+          <div className="flex-1 flex flex-col justify-between">
             <p className="whitespace-pre-line text-right">
               {`${topic?.content}`}
             </p>
+            <div>
+              <div className="w-full border-t border-black/15 mt-6"></div>
 
-            <div className="w-full border-t border-black/15 mt-6"></div>
+              <div className="flex items-center justify-between mt-6 text-sm">
+                <div className="flex items-center gap-x-4">
+                  <div className="flex items-center gap-x-1 font-semibold hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
+                    <svg className="w-4.5 h-4.5">
+                      <use href="#arrow-top"></use>
+                    </svg>
+                    <span>۴۵</span>
+                  </div>
+                  <div className="flex items-center gap-x-1 font-semibold hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
+                    <svg className="w-4.5 h-4.5">
+                      <use href="#reply"></use>
+                    </svg>
+                    <span>پاسخ</span>
+                  </div>
+                  <div className="hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
+                    <svg className="w-4.5 h-4.5">
+                      <use href="#share"></use>
+                    </svg>
+                  </div>
+                </div>
 
-            <div className="flex items-center justify-between mt-6 text-sm">
-              <div className="flex items-center gap-x-4">
-                <div className="flex items-center gap-x-1 font-semibold hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
+                <div className="flex items-center gap-x-6">
                   <svg className="w-4.5 h-4.5">
-                    <use href="#arrow-top"></use>
+                    <use href="#save"></use>
                   </svg>
-                  <span>۴۵</span>
-                </div>
-                <div className="flex items-center gap-x-1 font-semibold hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
                   <svg className="w-4.5 h-4.5">
-                    <use href="#reply"></use>
+                    <use href="#flag"></use>
                   </svg>
-                  <span>پاسخ</span>
-                </div>
-                <div className="hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
                   <svg className="w-4.5 h-4.5">
-                    <use href="#share"></use>
+                    <use href="#more"></use>
                   </svg>
                 </div>
               </div>
-
-              <div className="flex items-center gap-x-6">
-                <svg className="w-4.5 h-4.5">
-                  <use href="#save"></use>
-                </svg>
-                <svg className="w-4.5 h-4.5">
-                  <use href="#flag"></use>
-                </svg>
-                <svg className="w-4.5 h-4.5">
-                  <use href="#more"></use>
-                </svg>
-              </div>
+            <span className="text-gray-500 text-sm tracking-rtl-tighter mt-4 inline-block">
+              {timeAgo(topic?.created_at)}
+            </span>
             </div>
 
-            <span className="text-gray-500 text-sm tracking-rtl-tighter mt-4 inline-block">۲ ساعت پیش</span>
           </div>
         </div>
-        <div className="flex items-start gap-x-9 border border-black/15 py-6 px-9 rounded-lg bg-white">
-          <div className="max-w-32.5 flex flex-col items-center">
-            <AvatarPic author='سارا' size='2' />
-            <span className="mt-1.5 font-semibold">سارا احمدی</span>
-            <span className="bg-green-100 text-green-700 rounded-lg text-xs font-semibold px-2 py-1 mt-1.5">فارغ التحصیل</span>
-            <div className="text-gray-500 flex flex-col text-center text-xs mt-1.5 gap-y-0.5">
-              <span>دانشگاه تهران</span>
-              <span>۲۳۴ پست</span>
-              <span>عضو از ۱۴۰۱</span>
+
+        {posts.map(item => (
+          <div className="flex items-start gap-x-9 border border-black/15 py-6 px-9 rounded-lg bg-white">
+            <div className="max-w-32.5 flex flex-col items-center">
+              <AvatarPic author={item.author_name} size='2' />
+              <span className="mt-1.5 font-semibold">{item.author_name}</span>
+              <EducationStatus degree={item.author_status} />
+              <div className="text-gray-500 flex flex-col text-center text-xs mt-1.5 gap-y-0.5">
+                <span>دانشگاه تهران</span>
+                <span>۲۳۴ پست</span>
+                <span>عضو از ۱۴۰۱</span>
+              </div>
             </div>
-          </div>
-          <div className="flex-1">
-            <p className="whitespace-pre-line text-right">
-              {`ممنون از راهنمای خوبت علی جان 🙏
-              
-              یه نکته هم من اضافه می‌کنم: حتماً به ساعات کلاسی دقت کنید. بعضی وقت‌ها دو تا درس که می‌خواید بردارید با هم تداخل دارن.
-              
-              همچنین توصیه می‌کنم اگه می‌خواید درسی رو با دوستاتون بردارید، حتماً قبلش هماهنگ کنید تا همه یه استاد و یه کلاس رو انتخاب کنید.`}
-            </p>
+            <div className="flex-1">
+              <p className="whitespace-pre-line text-right">
+                {`
+                ${item.content}
+                `}
+              </p>
 
-            <div className="w-full border-t border-black/15 mt-6"></div>
+              <div className="w-full border-t border-black/15 mt-6"></div>
 
-            <div className="flex items-center justify-between mt-6 text-sm">
-              <div className="flex items-center gap-x-4">
-                <div className="flex items-center gap-x-1 font-semibold hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
-                  <svg className="w-4.5 h-4.5">
-                    <use href="#arrow-top"></use>
-                  </svg>
-                  <span>۴۵</span>
+              <div className="flex items-center justify-between mt-6 text-sm">
+                <div className="flex items-center gap-x-4">
+                  <div className="flex items-center gap-x-1 font-semibold hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
+                    <svg className="w-4.5 h-4.5">
+                      <use href="#arrow-top"></use>
+                    </svg>
+                    <span>۴۵</span>
+                  </div>
+                  <div className="flex items-center gap-x-1 font-semibold hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
+                    <svg className="w-4.5 h-4.5">
+                      <use href="#reply"></use>
+                    </svg>
+                    <span>پاسخ</span>
+                  </div>
+                  <div className="hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
+                    <svg className="w-4.5 h-4.5">
+                      <use href="#share"></use>
+                    </svg>
+                  </div>
                 </div>
-                <div className="flex items-center gap-x-1 font-semibold hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
+
+                <div className="flex items-center gap-x-6">
                   <svg className="w-4.5 h-4.5">
-                    <use href="#reply"></use>
+                    <use href="#save"></use>
                   </svg>
-                  <span>پاسخ</span>
-                </div>
-                <div className="hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
                   <svg className="w-4.5 h-4.5">
-                    <use href="#share"></use>
+                    <use href="#flag"></use>
+                  </svg>
+                  <svg className="w-4.5 h-4.5">
+                    <use href="#more"></use>
                   </svg>
                 </div>
               </div>
 
-              <div className="flex items-center gap-x-6">
-                <svg className="w-4.5 h-4.5">
-                  <use href="#save"></use>
-                </svg>
-                <svg className="w-4.5 h-4.5">
-                  <use href="#flag"></use>
-                </svg>
-                <svg className="w-4.5 h-4.5">
-                  <use href="#more"></use>
-                </svg>
-              </div>
-            </div>
-
-            <span className="text-gray-500 text-sm tracking-rtl-tighter mt-4 inline-block">۲ ساعت پیش</span>
-          </div>
-        </div>
-        <div className="flex items-start gap-x-9 border border-black/15 py-6 px-9 rounded-lg bg-white">
-          <div className="max-w-32.5 flex flex-col items-center">
-            <AvatarPic author='تست' size='2' />
-            <span className="mt-1.5 font-semibold">علی محمدی</span>
-            <span className="bg-blue-100 inline-block text-blue-700 rounded-lg text-xs font-semibold px-2 py-1 mt-1.5">دانشجوی کارشناسی</span>
-            <div className="text-gray-500 flex flex-col text-center text-xs mt-1.5 gap-y-0.5">
-              <span>دانشگاه تهران</span>
-              <span>۲۳۴ پست</span>
-              <span>عضو از ۱۴۰۱</span>
+              <span className="text-gray-500 text-sm tracking-rtl-tighter mt-4 inline-block">
+                {timeAgo(item.created_at)}
+              </span>
             </div>
           </div>
-          <div className="flex-1">
-            <p className="whitespace-pre-line text-right">
-              {`سلام، یه سوال داشتم 🤔
-              
-              من ترم ۴ هستم و می‌خوام درس سیستم‌عامل رو بردارم. نمی‌دونم استاد دکتر احمدی بهتره یا دکتر حسینی؟
-              
-              کسی با هر دوتاشون درس داشته که بتونه کمک کنه؟`}
-            </p>
+        ))}
 
-            <div className="w-full border-t border-black/15 mt-6"></div>
-
-            <div className="flex items-center justify-between mt-6 text-sm">
-              <div className="flex items-center gap-x-4">
-                <div className="flex items-center gap-x-1 font-semibold hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
-                  <svg className="w-4.5 h-4.5">
-                    <use href="#arrow-top"></use>
-                  </svg>
-                  <span>۴۵</span>
-                </div>
-                <div className="flex items-center gap-x-1 font-semibold hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
-                  <svg className="w-4.5 h-4.5">
-                    <use href="#reply"></use>
-                  </svg>
-                  <span>پاسخ</span>
-                </div>
-                <div className="hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
-                  <svg className="w-4.5 h-4.5">
-                    <use href="#share"></use>
-                  </svg>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-x-6">
-                <svg className="w-4.5 h-4.5">
-                  <use href="#save"></use>
-                </svg>
-                <svg className="w-4.5 h-4.5">
-                  <use href="#flag"></use>
-                </svg>
-                <svg className="w-4.5 h-4.5">
-                  <use href="#more"></use>
-                </svg>
-              </div>
-            </div>
-
-            <span className="text-gray-500 text-sm tracking-rtl-tighter mt-4 inline-block">۲ ساعت پیش</span>
-          </div>
-        </div>
         <div className="border border-black/15 py-6 px-9 rounded-lg bg-white">
           <span className="inline-block font-semibold">پاسخ خود را بنویسید</span>
 

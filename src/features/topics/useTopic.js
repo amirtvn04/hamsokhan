@@ -28,7 +28,7 @@ export function useTopic(topicId) {
         if (isMounted) setTopic(topicData);
 
         const { data: postsData, error: postsError } = await supabase
-          .from("posts")
+          .from("post_stats")
           .select("*")
           .eq("topic_id", topicId)
           .order("created_at", { ascending: true });

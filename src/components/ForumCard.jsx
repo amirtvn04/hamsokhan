@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Circle from "./elements/Circle"
-import { timeAgo } from "../utils/date";
+import { timeAgo } from "../utils/timeAgo";
 
 export default function ForumCard({ title, description, last_author_name, topics_count, posts_count, last_activity_at, slug }) {
     return (
