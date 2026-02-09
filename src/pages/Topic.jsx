@@ -1,8 +1,14 @@
 import AvatarPic from "../components/AvatarPic"
 import Circle from "../components/elements/Circle"
 import { Link } from "react-router-dom"
+import { useParams } from "react-router-dom"
+import { useTopic } from "../features/topics/useTopic"
 
 export default function Topic() {
+  const { topicSlug } = useParams()
+  const {topic, posts} = useTopic(topicSlug)
+  console.log(topic)
+  
   return (
     <main className="pt-15.5 max-w-250 mx-auto px-4 lg:px-2.5">
       <section className="mt-6">

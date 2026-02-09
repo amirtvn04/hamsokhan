@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Circle from "./elements/Circle"
+import { timeAgo } from "../utils/date";
 
 export default function ForumCard({ title, description, last_author_name, topics_count, posts_count, last_activity_at, slug }) {
     return (
@@ -8,7 +9,7 @@ export default function ForumCard({ title, description, last_author_name, topics
                 <div>
 
                     <Link to={`/forums/${slug}`}>
-                        <h5 className="font-semibold">{title}</h5>
+                        <h5 className="font-semibold hover:text-[#0065F4] transition duration-150">{title}</h5>
                     </Link>
                     <p className="text-gray-500 text-sm mt-2">{description}</p>
                 </div>
@@ -47,7 +48,7 @@ export default function ForumCard({ title, description, last_author_name, topics
                         <span className="text-black">{last_author_name}</span>
                     </div>
                     <Circle />
-                    <span className="text-gray-500 text-sm">{last_activity_at}</span>
+                    <span title={new Date(last_activity_at).toLocaleString('fa-IR')} className="text-gray-500 text-sm">{timeAgo(last_activity_at)}</span>
                 </div>
             </div>
         </div>

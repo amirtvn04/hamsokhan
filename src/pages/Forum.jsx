@@ -6,8 +6,6 @@ import { useTopics } from "../features/topics/useTopics"
 function Forum() {
   const { forumSlug } = useParams()
   const {topics, topicLoading} = useTopics(forumSlug)
-  console.log(forumSlug)
-  console.log(topics)
 
   return (
     <main className="pt-15.5 container-uni">
