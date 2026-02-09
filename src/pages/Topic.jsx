@@ -3,12 +3,13 @@ import Circle from "../components/elements/Circle"
 import { Link } from "react-router-dom"
 import { useParams } from "react-router-dom"
 import { useTopic } from "../features/topics/useTopic"
+import { timeAgo } from "../utils/date"
+import EducationStatus from "../components/elements/EducationStatus"
 
 export default function Topic() {
   const { topicSlug } = useParams()
-  const {topic, posts} = useTopic(topicSlug)
-  console.log(topic)
-  
+  const { topic, posts, loading } = useTopic(topicSlug)
+
   return (
     <main className="pt-15.5 max-w-250 mx-auto px-4 lg:px-2.5">
       <section className="mt-6">
@@ -19,11 +20,12 @@ export default function Topic() {
           </span>
         </p>
 
-        <h3>راهنمای انتخاب واحد ترم بهار ۱۴۰۳</h3>
+        <h3>{topic?.title}</h3>
+
 
         <div className="flex items-center gap-x-3 text-gray-500 text-sm mt-6">
           <div>
-            ۶۴
+            {topic?.posts_count.toLocaleString('fa-IR')}
             {" "}
             پاسخ
           </div>
@@ -35,16 +37,16 @@ export default function Topic() {
           </div>
           <Circle />
           <div>
-            آخرین فعالیت: ۲ ساعت پیش
+            آخرین فعالیت: {timeAgo(topic?.created_at)}
           </div>
         </div>
       </section>
       <section className="mt-7 space-y-3">
         <div className="flex items-start gap-x-9 border border-black/15 py-6 px-9 rounded-lg bg-white">
           <div className="max-w-32.5 flex flex-col items-center">
-            <AvatarPic author='تست' size='2' />
-            <span className="mt-1.5 font-semibold">علی محمدی</span>
-            <span className="bg-blue-100 text-blue-700 rounded-lg text-xs font-semibold px-2 py-1 mt-1.5">دانشجوی کارشناسی</span>
+            <AvatarPic author={topic?.author_name} size='2' />
+            <span className="mt-1.5 font-semibold">{topic?.author_name}</span>
+            <EducationStatus degree='bachelor' />
             <div className="text-gray-500 flex flex-col text-center text-xs mt-1.5 gap-y-0.5">
               <span>دانشگاه تهران</span>
               <span>۲۳۴ پست</span>
@@ -53,25 +55,7 @@ export default function Topic() {
           </div>
           <div className="flex-1">
             <p className="whitespace-pre-line text-right">
-              {`سلام به همه دوستان دانشجوی عزیز 👋
-              
-              با توجه به نزدیک شدن زمان انتخاب واحد برای ترم بهار ۱۴۰۳، تصمیم گرفتم تجربیات و نکاتی که در این سال‌ها یاد گرفتم را با شما به اشتراک بگذارم.
-              
-              ## نکات مهم انتخاب واحد:
-              
-              ### ۱. برنامه‌ریزی زمانی
-              قبل از انتخاب واحد، حتماً برنامه روزانه خودتون رو بررسی کنید. اگه کار می‌کنید یا فعالیت‌های دیگه‌ای دارید، تعداد واحدهای کمتری بردارید.
-              
-              ### ۲. بررسی اساتید
-              از سایت‌هایی مثل استادیار و یا از دوستان ترم‌های بالاتر درباره اساتید سوال کنید. انتخاب استاد مناسب خیلی مهمه.
-              
-              ### ۳. پیش‌نیازها
-              حتماً به پیش‌نیازها دقت کنید. بعضی وقت‌ها می‌شه درس رو پاس کنی ولی برای درس بعدی مشکل پیدا می‌کنی.
-              
-              ### ۴. ترکیب دروس
-              سعی کنید ترکیب دروس سخت و آسون رو رعایت کنید. همه دروس سخت رو با هم نبرید.
-              
-              اگه سوالی دارید خوشحال میشم کمک کنم 😊 `}
+              {`${topic?.content}`}
             </p>
 
             <div className="w-full border-t border-black/15 mt-6"></div>

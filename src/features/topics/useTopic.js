@@ -18,7 +18,7 @@ export function useTopic(topicId) {
 
       try {
         const { data: topicData, error: topicError } = await supabase
-          .from("topics")
+          .from("topic_stats")
           .select("*")
           .eq("id", topicId)
           .single();
