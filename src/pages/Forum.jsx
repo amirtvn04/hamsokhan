@@ -90,7 +90,7 @@ function Forum() {
 
       </section>
 
-      <div className="flex">
+      {/* <div className="flex">
         <div className="pagination flex items-center text-center gap-x-1 mt-5 mx-auto">
           <div className="bg-white px-2 py-1.5 min-w-10 rounded-lg border border-black/15">قبلی</div>
           <div className="bg-white px-2 py-1.5 min-w-10 rounded-lg border border-black/15">۱</div>
@@ -102,7 +102,7 @@ function Forum() {
           <div className="bg-white px-2 py-1.5 min-w-10 rounded-lg border border-black/15">۱۰</div>
           <div className="bg-white px-2 py-1.5 min-w-10 rounded-lg border border-black/15">بعدی</div>
         </div>
-      </div>
+      </div> */}
     </main>
   )
 }

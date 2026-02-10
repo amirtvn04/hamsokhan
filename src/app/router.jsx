@@ -16,7 +16,7 @@ import Categories from "../pages/Categories"
 import Category from "../pages/Category";
 
 
-import ProtectedRoute from "../features/auth/ProtectedRoute";
+import { AuthGuard } from "../features/auth/AuthGuard";
 
 export const router = createBrowserRouter([
   {
@@ -35,19 +35,21 @@ export const router = createBrowserRouter([
       {
         path: "/profile",
         element: (
-            <Profile />
+          <Profile />
         ),
       },
     ],
   },
 
   {
-        path: "/chat",
-        element: (
-            <LiveChat />
-        ),
-      },
-      
+    path: "/chat",
+    element: (
+      <AuthGuard>
+        <LiveChat />
+      </AuthGuard>
+    ),
+  },
+
   {
     element: <AuthLayout />,
     children: [

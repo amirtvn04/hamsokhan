@@ -1,8 +1,12 @@
 import clsx from "clsx";
 import { Link, NavLink } from "react-router-dom"
 import { useState, useEffect } from "react";
+import { useAuth } from "../features/auth/useAuth";
 
 export default function Header() {
+    const { user, loading } = useAuth();
+    console.log(user)
+
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
 
