@@ -1,7 +1,7 @@
 import Button from './elements/Button.jsx'
 import InputField from './elements/InputField.jsx'
-import { supabase } from "../lib/supabase.js"
-import { Link } from 'react-router-dom'
+import { useRegister } from '../features/auth/useRegister.js'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
 function RegisterInputs() {
@@ -9,39 +9,27 @@ function RegisterInputs() {
     const [password, setPassword] = useState("")
     const [studentId, setStudentId] = useState("")
     const [fullName, setFullName] = useState("")
-    const [error, setError] = useState(null)
-    const [loading, setLoading] = useState(false)
 
-    const handleRegister = async (e) => {
-        e.preventDefault();
+    const { register, loading, error } = useRegister()
+    const navigate = useNavigate()
 
-        setLoading(true)
-        setError(null)
-
-        const { data, error } = await supabase.auth.signUp({
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        const success = await register({
             email,
-            password
+            password,
+            fullName,
+            studentId
         })
 
-        if (error) {
-            setError(error.message)
-            setLoading(false)
-            return
+        if (success) {
+            navigate('/')
         }
-
-        await supabase.from("profiles").insert({
-            id: data.user.id,
-            email,
-            student_id: studentId,
-            full_name: fullName
-        })
-
-        setLoading(false)
-        alert("ثبت‌نام موفق بود، ایمیل را بررسی کنید")
     }
 
+
     return (
-        <form onSubmit={handleRegister} className='w-82.25 sm:w-[384px] flex flex-1 flex-col justify-center items-center mx-auto'>
+        <form onSubmit={handleSubmit} className='w-82.25 sm:w-[384px] flex flex-1 flex-col justify-center items-center mx-auto'>
             <Link to="/" className='bg-primary w-12 h-12 rounded-lg flex items-center justify-center text-[24px] text-white'>
                 هـ
             </Link>

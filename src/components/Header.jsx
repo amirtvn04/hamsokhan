@@ -5,7 +5,6 @@ import { useAuth } from "../features/auth/useAuth";
 
 export default function Header() {
     const { user, loading } = useAuth();
-    console.log(user)
 
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
@@ -44,6 +43,7 @@ export default function Header() {
                             <use href="#door-in"></use>
                         </svg>
                         <span>ورود</span>
+                        <span>{user?.email}</span>
                     </Link>
                     <Link to="/register" className="px-7 py-1.5 rounded-lg bg-primary text-white hover:shadow-[0_2px_20px_rgba(0,101,244,0.4)] focus:shadow-[0_2px_20px_rgba(0,101,244,0.4)] transition-all">
                         ثبت‌نام

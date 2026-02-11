@@ -1,32 +1,26 @@
 import Button from './elements/Button'
 import InputField from './elements/InputField'
-import { supabase } from "../lib/supabase"
-import { Link } from 'react-router-dom'
+import { useLogin } from '../features/auth/useLogin'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
 function LoginInputs() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState(null)
+    const { login, loading, error } = useLogin()
+    const navigate = useNavigate()
 
-    const handleSignIn = async (e) => {
-        e.preventDefault();
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        const success = await login(email, password)
 
-        setLoading(true)
-        setError(null)
-        const { data, error } = await supabase.auth.signInWithPassword({
-            email,
-            password
-        })
-        console.log({ data })
-        if (error) setError(error.message)
-        else alert("ورود موفق! خوش آمدید.")
-        setLoading(false)
+        if (success) {
+            navigate('/')
+        }
     }
 
     return (
-        <form onSubmit={handleSignIn} className='w-82.25 sm:w-[384px] flex flex-1 flex-col justify-center items-center mx-auto'>
+        <form onSubmit={handleSubmit} className='w-82.25 sm:w-[384px] flex flex-1 flex-col justify-center items-center mx-auto'>
             <Link to="/" className='bg-primary w-12 h-12 rounded-lg flex items-center justify-center text-[24px] text-white'>
                 هـ
             </Link>
