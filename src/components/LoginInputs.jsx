@@ -3,8 +3,11 @@ import InputField from './elements/InputField'
 import { useLogin } from '../features/auth/useLogin'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import { useAuth } from '../features/auth/useAuth'
 
 function LoginInputs() {
+    const {refreshUser} = useAuth()
+
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const { login, loading, error } = useLogin()
@@ -15,6 +18,7 @@ function LoginInputs() {
         const success = await login(email, password)
 
         if (success) {
+            await refreshUser()
             navigate('/')
         }
     }

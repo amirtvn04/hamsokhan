@@ -21,9 +21,4 @@ export const authService = {
       }
     })
   },
-
-  async logout() {
-    return await supabase.auth.signOut()
-  }
-
 }
