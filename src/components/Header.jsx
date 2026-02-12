@@ -61,7 +61,7 @@ export default function Header() {
                     )}
                     {profile && !loading && (
                         <>
-                            <Link onClick={logout}>Logout</Link>
+                            {/* <Link onClick={logout}>Logout</Link> */}
                             <AvatarPic author={profile?.full_name} size="0" />
                         </>
                     )}

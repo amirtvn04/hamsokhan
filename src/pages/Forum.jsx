@@ -2,10 +2,14 @@ import { Link } from "react-router-dom"
 import TopicCard from "../components/TopicCard"
 import { useParams } from "react-router-dom"
 import { useTopics } from "../features/topics/useTopics"
+import { CreateTopicModal } from "../features/topics/CreateTopicModal"
+import { useState } from "react"
 
 function Forum() {
+  const [open, setOpen] = useState(false)
+
   const { forumSlug } = useParams()
-  const {topics, topicLoading} = useTopics(forumSlug)
+  const { topics, topicLoading } = useTopics(forumSlug)
 
   return (
     <main className="pt-15.5 container-uni">
@@ -22,14 +26,18 @@ function Forum() {
             <p className="text-gray-500 font-semibold mt-3">بحث درباره درس‌ها، پروژه‌ها و تکنولوژی‌های جدید در حوزه مهندسی کامپیوتر</p>
           </div>
 
-          <Link to="" className="px-6 py-2.5 flex items-center gap-x-0.5 rounded-lg bg-primary text-white hover:shadow-[0_2px_20px_rgba(0,101,244,0.4)] focus:shadow-[0_2px_20px_rgba(0,101,244,0.4)] transition-all font-semibold">
+          <Link onClick={() => setOpen(true)} className="px-6 py-2.5 flex items-center gap-x-0.5 rounded-lg bg-primary text-white hover:shadow-[0_2px_20px_rgba(0,101,244,0.4)] focus:shadow-[0_2px_20px_rgba(0,101,244,0.4)] transition-all font-semibold">
             <svg className="w-6 h-6">
               <use href="#plus"></use>
             </svg>
             تاپیک جدید
           </Link>
         </div>
-
+        <CreateTopicModal
+          forumId={forumSlug}
+          open={open}
+          onClose={() => setOpen(false)}
+        />
         <div className="flex items-center gap-x-8 text-gray-500 text-sm mt-6">
           <div className="flex items-center gap-x-1">
             <svg className="w-4 h-4">
