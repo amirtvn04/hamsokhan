@@ -3,7 +3,7 @@ import { useCreatePost } from "../useCreatePost"
 import { useAuth } from "../../auth/useAuth"
 import { Link } from "react-router-dom"
 
-export default function CreatePostForm({ topicId, onCreated }) {
+export default function CreatePostForm({ topicId }) {
     const { user } = useAuth()
     const { createPost, loading, error } = useCreatePost()
 
@@ -15,7 +15,6 @@ export default function CreatePostForm({ topicId, onCreated }) {
 
         await createPost({ topicId, content })
         setContent("")
-        onCreated?.()
     }
 
     if (!user) {

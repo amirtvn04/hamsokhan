@@ -5,10 +5,12 @@ import { useTopic } from "../features/topics/useTopic"
 import { timeAgo } from "../utils/timeAgo"
 import EducationStatus from "../components/elements/EducationStatus"
 import CreatePostForm from "../features/topics/components/CreatePostForm"
+import { useTopicPosts } from "../features/topics/useTopicPosts"
 
 export default function Topic() {
-  const { topicSlug } = useParams()
-  const { topic, posts, loading } = useTopic(topicSlug)
+  const { topicId } = useParams()
+  const { topic } = useTopic(topicId)
+  const { posts } = useTopicPosts(topicId)
 
   return (
     <main className="pt-15.5 max-w-250 mx-auto px-4 lg:px-2.5">
@@ -159,10 +161,9 @@ export default function Topic() {
           </div>
         ))}
 
-      <CreatePostForm
-        topicId={topic?.id}
-        onCreated={() => window.location.reload()}
-      />
+        <CreatePostForm
+          topicId={topic?.id}
+        />
       </section>
     </main>
   )

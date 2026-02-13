@@ -42,7 +42,7 @@ export const router = createBrowserRouter([
       { path: "/categories", element: <Categories /> },
       { path: "/categories/:categorySlug", element: <Category /> },
 
-      { path: "/topics/:topicSlug", element: <Topic /> },
+      { path: "/topics/:topicId", element: <Topic /> },
 
       {
         path: "/profile",

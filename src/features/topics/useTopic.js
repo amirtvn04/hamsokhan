@@ -3,7 +3,6 @@ import { supabase } from "../../lib/supabase";
 
 export function useTopic(topicId) {
   const [topic, setTopic] = useState(null);
-  const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -17,25 +16,15 @@ export function useTopic(topicId) {
       setError(null);
 
       try {
-        const { data: topicData, error: topicError } = await supabase
+        const { data, error } = await supabase
           .from("topic_stats")
           .select("*")
           .eq("id", topicId)
           .single();
 
-        if (topicError) throw topicError;
+        if (error) throw error;
 
-        if (isMounted) setTopic(topicData);
-
-        const { data: postsData, error: postsError } = await supabase
-          .from("post_stats")
-          .select("*")
-          .eq("topic_id", topicId)
-          .order("created_at", { ascending: true });
-
-        if (postsError) throw postsError;
-
-        if (isMounted) setPosts(postsData || []);
+        if (isMounted) setTopic(data);
       } catch (err) {
         if (isMounted) setError(err.message);
       } finally {
@@ -50,5 +39,5 @@ export function useTopic(topicId) {
     };
   }, [topicId]);
 
-  return { topic, posts, loading, error };
+  return { topic, loading, error };
 }
