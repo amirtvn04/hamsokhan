@@ -1,10 +1,10 @@
 import AvatarPic from "../components/AvatarPic"
 import Circle from "../components/elements/Circle"
-import { Link } from "react-router-dom"
 import { useParams } from "react-router-dom"
 import { useTopic } from "../features/topics/useTopic"
 import { timeAgo } from "../utils/timeAgo"
 import EducationStatus from "../components/elements/EducationStatus"
+import CreatePostForm from "../features/topics/components/CreatePostForm"
 
 export default function Topic() {
   const { topicSlug } = useParams()
@@ -159,18 +159,10 @@ export default function Topic() {
           </div>
         ))}
 
-        <div className="border border-black/15 py-6 px-9 rounded-lg bg-white">
-          <span className="inline-block font-semibold">پاسخ خود را بنویسید</span>
-
-          <textarea className="w-full border mt-3 bg-black/5 border-black/15 rounded-lg min-h-40 p-4 hover:border-[#0065F4] focus:outline-2 outline-[#0065F4] focus:border-[#0065F4] transition-all duration-150" name="" id="" placeholder="پاسخ خود را بنویسید..."></textarea>
-
-          <div className="flex justify-between items-center mt-3">
-            <span className="text-sm text-nowrap text-gray-500">توضیحات پاسخ</span>
-            <Link to="/register" className="px-7 py-1.5 rounded-lg bg-primary text-white hover:shadow-[0_2px_20px_rgba(0,101,244,0.4)] focus:shadow-[0_2px_20px_rgba(0,101,244,0.4)] transition-all">
-              ارسال پاسخ
-            </Link>
-          </div>
-        </div>
+      <CreatePostForm
+        topicId={topic?.id}
+        onCreated={() => window.location.reload()}
+      />
       </section>
     </main>
   )

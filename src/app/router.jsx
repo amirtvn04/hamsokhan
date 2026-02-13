@@ -32,7 +32,9 @@ export const router = createBrowserRouter([
           {
             path: "new-topic",
             element: (
+              <AuthGuard>
                 <CreateTopicModal />
+              </AuthGuard>
             ),
           },
         ],
