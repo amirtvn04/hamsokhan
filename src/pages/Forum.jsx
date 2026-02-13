@@ -2,13 +2,14 @@ import { Link } from "react-router-dom"
 import TopicCard from "../components/TopicCard"
 import { useParams, Outlet } from "react-router-dom"
 import { useTopics } from "../features/topics/useTopics"
-import { CreateTopicModal } from "../features/topics/components/CreateTopicModal"
-import { useState } from "react"
+import { useForums } from "../features/forums/useForums"
 
 function Forum() {
   const { forumSlug } = useParams()
   const { topics, topicLoading } = useTopics(forumSlug)
-  const forumId = topics?.[0]?.forum_id
+
+  const { forum } = useForums(null, forumSlug)
+  const forumId = forum?.id
 
   return (
     <main className="pt-15.5 container-uni">
@@ -21,8 +22,10 @@ function Forum() {
         </p>
         <div className="flex items-start justify-between">
           <div>
-            <h3>مهندسی کامپیوتر</h3>
-            <p className="text-gray-500 font-semibold mt-3">بحث درباره درس‌ها، پروژه‌ها و تکنولوژی‌های جدید در حوزه مهندسی کامپیوتر</p>
+            <h3>{forum?.title}</h3>
+            <p className="text-gray-500 font-semibold mt-3">
+              {forum?.description}
+            </p>
           </div>
 
           <Link to={'new-topic'} className="px-6 py-2.5 flex items-center gap-x-0.5 rounded-lg bg-primary text-white hover:shadow-[0_2px_20px_rgba(0,101,244,0.4)] focus:shadow-[0_2px_20px_rgba(0,101,244,0.4)] transition-all font-semibold">
@@ -38,7 +41,7 @@ function Forum() {
             <svg className="w-4 h-4">
               <use href="#message"></use>
             </svg>
-            ۱۳,۵۶۴
+            {forum?.topics_count?.toLocaleString('fa-IR')}
             {" "}
             تاپیک
           </div>
@@ -46,7 +49,7 @@ function Forum() {
             <svg className="w-4 h-4">
               <use href="#people"></use>
             </svg>
-            ۱۳,۵۶۴
+            {forum?.posts_count?.toLocaleString('fa-IR')}
             {" "}
             پست
           </div>

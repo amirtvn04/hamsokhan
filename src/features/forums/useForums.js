@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabase";
 
-export function useForums(categorySlug = null) {
+export function useForums(categorySlug = null, forumSlug = null) {
   const [forums, setForums] = useState([]);
+  const [forum, setForum] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchForums = async () => {
       setLoading(true);
+      setError(null);
 
       let query = supabase
         .from("forum_stats")
@@ -31,10 +33,20 @@ export function useForums(categorySlug = null) {
         query = query.eq("category_slug", categorySlug);
       }
 
+      if (forumSlug) {
+        query = query.eq("slug", forumSlug).single();
+      }
+
       const { data, error } = await query;
 
       if (error) {
         setError(error.message);
+        setLoading(false);
+        return;
+      }
+
+      if (forumSlug) {
+        setForum(data);
         setLoading(false);
         return;
       }
@@ -62,7 +74,12 @@ export function useForums(categorySlug = null) {
     };
 
     fetchForums();
-  }, [categorySlug]);
+  }, [categorySlug, forumSlug]);
 
-  return { forums, loading, error };
+  return {
+    forums,
+    forum,
+    loading,
+    error,
+  };
 }
