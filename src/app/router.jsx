@@ -15,7 +15,7 @@ import NotFound from "../pages/NotFound";
 import Categories from "../pages/Categories"
 import Category from "../pages/Category";
 
-
+import { CreateTopicModal } from "../features/topics/components/CreateTopicModal";
 import { AuthGuard } from "../features/auth/AuthGuard";
 
 export const router = createBrowserRouter([
@@ -25,8 +25,18 @@ export const router = createBrowserRouter([
       { path: "/", element: <Home /> },
 
       { path: "/forums", element: <Forums /> },
-      { path: "/forums/:forumSlug", element: <Forum /> },
-
+      {
+        path: "/forums/:forumSlug",
+        element: <Forum />,
+        children: [
+          {
+            path: "new-topic",
+            element: (
+                <CreateTopicModal />
+            ),
+          },
+        ],
+      },
       { path: "/categories", element: <Categories /> },
       { path: "/categories/:categorySlug", element: <Category /> },
 
