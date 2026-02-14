@@ -3,14 +3,14 @@ import { supabase } from "../../lib/supabase";
 
 export function useTopics(forumSlug) {
     const [topics, setTopics] = useState([])
-    const [topicLoading, setTopicLoading] = useState(true)
+    const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
 
     useEffect(() => {
         if (!forumSlug) return
 
         const fetchTopics = async () => {
-            setTopicLoading(true)
+            setLoading(true)
 
             const { data, error } = await supabase
                 .from("forum_topics")
@@ -25,11 +25,11 @@ export function useTopics(forumSlug) {
                 setTopics(data);
             }
 
-            setTopicLoading(false);
+            setLoading(false);
         }
 
         fetchTopics();
     }, [forumSlug])
 
-    return { topics, topicLoading, error }
+    return { topics, loading, error }
 }

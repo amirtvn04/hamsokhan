@@ -2,7 +2,7 @@ import Skeleton from "./Skeleton"
 
 export default function CategoryCardSkeleton() {
     return (
-        <div className="bg-white border border-black/15 rounded-lg px-6 py-6 hover:border-[#0065F4] transition duration-150">
+        <div className="bg-white border border-black/15 rounded-lg px-6 py-6">
             <Skeleton className="size-12.5 inline-block" />
 
             <Skeleton className="h-5 mt-3 w-28" />

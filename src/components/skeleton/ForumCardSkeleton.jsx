@@ -10,7 +10,7 @@ export default function ForumCardSkeleton() {
 
             <div className="grid grid-cols-2 gap-3">
                 {Array.from({ length: 7 }).map((_, i) => (
-                    <div key={i} className="py-5 px-6 rounded-lg bg-white border border-black/15 hover:border-[#0065F4] transition-colors duration-150">
+                    <div key={i} className="py-5 px-6 rounded-lg bg-white border border-black/15">
                         <div className="flex items-start justify-between">
                             <div>
                                 <Skeleton className="h-6 w-32" />
