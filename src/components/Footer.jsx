@@ -10,7 +10,7 @@ export default function Footer() {
                             <div to="/" className='bg-primary w-9 h-9 rounded-lg flex items-center justify-center text-[20px] text-white'>
                                 هـ
                             </div>
-                            <span className="text-lg font-bold">هم‌سخن</span>
+                            <span className="text-lg font-bold">یونی‌گپ</span>
                         </Link>
                         <p className="text-gray-500 tracking-tight mt-2.5 leading-8">
                             تالار گفتگوی دانشجویی برای به اشتراک‌گذاری
@@ -46,7 +46,7 @@ export default function Footer() {
                         </ul>
                     </div>
                 </div>
-                <p className="text-gray-500 text-xs my-4 text-center">© ۱۴۰۴ هم‌سخن. تمامی حقوق محفوظ است.</p>
+                <p className="text-gray-500 text-xs my-4 text-center">© ۱۴۰۴ یونی‌گپ. تمامی حقوق محفوظ است.</p>
             </div>
         </footer>
     )

@@ -3,8 +3,11 @@ import InputField from './elements/InputField.jsx'
 import { useRegister } from '../features/auth/useRegister.js'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import { useAuth } from '../features/auth/useAuth.js'
 
 function RegisterInputs() {
+    const { refreshUser } = useAuth()
+
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [studentId, setStudentId] = useState("")
@@ -23,6 +26,7 @@ function RegisterInputs() {
         })
 
         if (success) {
+            await refreshUser()
             navigate('/')
         }
     }
@@ -30,12 +34,12 @@ function RegisterInputs() {
 
     return (
         <form onSubmit={handleSubmit} className='w-82.25 sm:w-[384px] flex flex-1 flex-col justify-center items-center mx-auto'>
-            <Link to="/" className='bg-primary w-12 h-12 rounded-lg flex items-center justify-center text-[24px] text-white'>
+            <Link to="/" className='bg-primary size-10 sm:size-12 rounded-lg flex items-center justify-center text-[24px] text-white'>
                 هـ
             </Link>
 
-            <h3 className='mt-7'>به جمع هم‌سخن ها بپیوندید!</h3>
-            <p className='text-gray-500 mt-2 mb-12 tracking-rtl-tighter text-center leading-7'>در هم‌سخن می‌توانید سؤال بپرسید، تجربه‌هایتان را به اشتراک بگذارید و با دانشجویان و فارغ‌التحصیلان گفتگو کنید.</p>
+            <h3 className='mt-7 '>به یونی‌گپ بپیوندید</h3>
+            <p className='text-gray-500 mt-2 mb-7 sm:mb-12 tracking-rtl-tighter text-center leading-7 text-b'>در یونی‌گپ می‌توانید سؤال بپرسید، تجربه‌های خود را به اشتراک بگذارید و با دانشجویان و فارغ‌التحصیلان گفتگو کنید</p>
 
             <div className='space-y-3.5 w-full mb-7'>
                 <InputField value={fullName} onChange={(e) => setFullName(e.target.value)} icon='person' type='text' CustomStyles='w-full pr-12 pl-5 py-4' placeholder='نام مستعار' />

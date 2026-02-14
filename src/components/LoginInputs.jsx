@@ -25,12 +25,12 @@ function LoginInputs() {
 
     return (
         <form onSubmit={handleSubmit} className='w-82.25 sm:w-[384px] flex flex-1 flex-col justify-center items-center mx-auto'>
-            <Link to="/" className='bg-primary w-12 h-12 rounded-lg flex items-center justify-center text-[24px] text-white'>
+            <Link to="/" className='bg-primary size-10 sm:size-12 rounded-lg flex items-center justify-center text-[24px] text-white'>
                 هـ
             </Link>
 
-            <h3 className='mt-7'>به هم‌سخن خوش آمدید!</h3>
-            <p className='text-gray-500 mt-2 mb-12 tracking-rtl-tighter leading-7'>برای دسترسی به تالارهای گفتگو وارد حساب کاربری خود شوید</p>
+            <h3 className='mt-7'>به یونی‌گپ خوش آمدید</h3>
+            <p className='text-gray-500 mt-2 mb-7 sm:mb-12 text-center tracking-rtl-tight leading-7'>برای ادامه، وارد حساب کاربری خود شوید</p>
 
             <div className='space-y-3.5 w-full'>
                 <InputField value={email} onChange={(e) => setEmail(e.target.value)} icon='person' type='text' CustomStyles='w-full pr-12 pl-5 py-4' placeholder='ایمیل یا شماره دانشجویی' />

@@ -7,7 +7,7 @@ function Home() {
   return (
     <main>
       <section>
-        <div className="text-center min-h-screen flex flex-col justify-center items-center pt-15.5 pb-30">
+        <div className="text-center min-h-screen flex flex-col justify-center items-center pt-14.5 sm:pt-15.5 pb-30">
           <div className="flex flex-col items-center flex-1 justify-center bg-linear-to-b from-[#2564eb23] to-[#fafafa] w-full shrink-0">
             <div className="container-uni flex flex-col py-20">
               <h1 className="font-doran text-3xl font-bold">جامعه دانشجویی آنلاین دانشگاه‌های ایران</h1>
@@ -98,7 +98,7 @@ function Home() {
         <div className="container-uni mt-30">
           <div className="relative overflow-hidden">
 
-            <h3 className="mb-6">نظرات کاربران درباره هم‌سخن</h3>
+            <h3 className="mb-6">نظرات کاربران درباره یونی‌گپ</h3>
 
             <TestimonialsCarousel />
           </div>
@@ -110,7 +110,7 @@ function Home() {
           <div className="flex items-center justify-between gap-x-6 bg-primary rounded-lg px-15 py-17 mt-12">
             <div className="w-[55%] text-white">
               <h5 className="text-xl font-doran font-bold">به جمع دانشجویان فعال بپیوندید!</h5>
-              <p className="mt-6 text-lg leading-9 text-white/90">به جمع هم‌سخن‌ها بپیوندید و در فضایی امن و دوستانه، سؤال بپرسید، تجربه‌هایتان را به اشتراک بگذارید و از دانش و تجربه دیگران استفاده کنید.</p>
+              <p className="mt-6 text-lg leading-9 text-white/90">به جمع یونی‌گپ‌ها بپیوندید و در فضایی امن و دوستانه، سؤال بپرسید، تجربه‌هایتان را به اشتراک بگذارید و از دانش و تجربه دیگران استفاده کنید.</p>
             </div>
             <Link to='/register' className="py-4 rounded-xl bg-white text-primary px-15 text-center text-lg font-semibold">
               ثبت‌نام و شروع گفتگو

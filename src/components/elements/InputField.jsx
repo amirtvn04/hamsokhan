@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function InputField({ icon, type, CustomStyles, ...props }) {
+function InputField({ icon, type, CustomStyles, value, ...props }) {
     const isPassword = type === "password";
     const [showPassword, setShowPassword] = useState(false);
 
@@ -11,8 +11,8 @@ function InputField({ icon, type, CustomStyles, ...props }) {
             </svg>
 
             {isPassword && (
-                <svg onClick={() => setShowPassword(!showPassword)} className={`w-6 h-6 text-gray-500 absolute top-1/2 transform -translate-y-1/2 left-5 cursor-pointer hover:text-black transition-color group-focus-within:text-black`}>
-                    <use href={showPassword ? "#eye-slash" : "#eye"}></use>
+                <svg onClick={() => setShowPassword(!showPassword)} className={`w-6 h-6 text-gray-500 absolute top-1/2 transform -translate-y-1/2 left-5 cursor-pointer hover:text-black transition-color group-focus-within:text-black opacity-0 ${value ? "opacity-100" : ""}`}>
+                    <use href={showPassword ? "#eye" : "#eye-slash"}></use>
                 </svg>
             )}
 
