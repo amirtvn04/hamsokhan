@@ -1,13 +1,10 @@
 import InputField from "../components/elements/InputField"
 import ForumCard from "../components/ForumCard"
+import ForumCardSkeleton from "../components/skeleton/ForumCardSkeleton";
 import { useForums } from "../features/forums/useForums"
 
 function Forums() {
   const { forums, loading } = useForums();
-
-  if (loading) {
-    return (<div className="mt-22">صبر کن</div>)
-  }
 
   return (
     <main className='pt-15.5 container-uni'>
@@ -20,7 +17,7 @@ function Forums() {
             <svg className="absolute w-5 h-5 -rotate-90 left-4 top-1/2 transform -translate-y-1/2">
               <use href="#chevron-left"></use>
             </svg>
-            <select className="custom-select h-full w-46 border border-black/15 rounded-lg pr-4 pl-8 hover:border-[#0065F4] focus:outline-2 focus:border-[#0065F4] focus:outline-[#0065F4] transition duration-150" name="" id="">
+            <select className="custom-select h-full w-46 border bg-white border-black/15 rounded-lg pr-4 pl-8 hover:border-[#0065F4] focus:outline-2 focus:border-[#0065F4] focus:outline-[#0065F4] transition duration-150" name="" id="">
               <option value="">همه دسته‌بندی‌ها</option>
             </select>
           </div>
@@ -28,19 +25,24 @@ function Forums() {
       </section>
 
       <div>
-        {forums.map(item => (
-          <section key={item.category.id} className="mt-9">
-            <div className="flex items-center gap-x-3 mb-5">
-              <h3 className="text-xl mr-3">{item.category.title}</h3>
-              <div className="flex-1 border-t border-black/15"></div>
-            </div>
-            <div className="grid grid-cols-2 gap-3">
-              {item.forums.map(item => (
-                <ForumCard key={item.id} {...item} />
-              ))}
-            </div>
-          </section>
-        ))}
+        {!loading && forums ?
+          forums.map(item => (
+            <section key={item.category.id} className="mt-9">
+              <div className="flex items-center gap-x-3 mb-5">
+                <h3 className="text-xl mr-3">{item.category.title}</h3>
+                <div className="flex-1 border-t border-black/15"></div>
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                {item.forums.map(item => (
+                  <ForumCard key={item.id} {...item} />
+                ))}
+              </div>
+            </section>
+          ))
+          :
+          <ForumCardSkeleton />
+        }
+
       </div>
 
 

@@ -2,14 +2,11 @@ import InputField from "../components/elements/InputField"
 import ForumCard from "../components/ForumCard"
 import { useForums } from "../features/forums/useForums"
 import { useParams } from "react-router-dom";
+import ForumCardSkeleton from "../components/skeleton/ForumCardSkeleton"
 
 function Category() {
     const { categorySlug } = useParams()
     const { forums, loading } = useForums(categorySlug);
-
-    if (loading) {
-        return (<div className="mt-22">صبر کن</div>)
-    }
 
     return (
         <main className='pt-15.5 container-uni'>
@@ -30,7 +27,8 @@ function Category() {
             </section> */}
 
             <div className="flx">
-                {forums.map(item => (
+
+                {!loading ? forums.map(item => (
                     <section key={item.category.id} className="mt-9">
                         <div className="flex items-center gap-x-3 mb-5">
                             <h3 className="text-xl mr-3">{item.category.title}</h3>
@@ -42,7 +40,9 @@ function Category() {
                             ))}
                         </div>
                     </section>
-                ))}
+                ))
+                    : <ForumCardSkeleton />
+                }
             </div>
 
         </main>
