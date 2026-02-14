@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { useAuth } from '../features/auth/useAuth'
 
 function LoginInputs() {
-    const {refreshUser} = useAuth()
+    const { refreshUser } = useAuth()
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
