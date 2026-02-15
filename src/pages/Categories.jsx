@@ -17,7 +17,7 @@ function Categories() {
         <InputField icon='search' type='text' CustomStyles='w-full pr-12 pl-5 py-3 bg-white' placeholder='جستجو در بین دسته‌بندی‌ها...' />
       </div>
 
-      <div className="grid grid-cols-4 gap-3.5 mt-8 mb-8">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 mt-8 mb-8">
         {Globalloading ?
           Array.from({ length: 4 }).map((_, i) => (
             <StatCardSkeleton key={i} />
@@ -46,7 +46,7 @@ function Categories() {
         }
       </div>
 
-      <section className="grid grid-cols-4 gap-3.5">
+      <section className="grid sm:grid-cols-4 gap-3.5">
         {Categoryloading ?
           Array.from({ length: 8 }).map((_, i) => (
             <CategoryCardSkeleton key={i} />

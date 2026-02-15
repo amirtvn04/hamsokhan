@@ -16,7 +16,7 @@ function Forum() {
   return (
     <main className="pt-15.5 container-uni">
       <section className="mt-6">
-        <p className="text-sm text-gray-500 font-semibold mb-6">
+        <p className="text-xs sm:text-sm text-gray-500 font-semibold mb-6">
           خانه / انجمن ها /
           <span className="font-normal">
             مهندسی کامپیوتر
@@ -26,28 +26,28 @@ function Forum() {
           <div>
             {forumLoading ? (
               <>
-                <Skeleton className='h-8 w-40' />
-                <Skeleton className='h-6 w-72 mt-2' />
+                <Skeleton className='h-8 w-26 sm:w-40' />
+                <Skeleton className='h-6 w-32 sm:w-72 mt-2' />
               </>
             ) : (
               <>
                 <h3>{forum?.title}</h3>
-                <p className="text-gray-500 font-semibold mt-3">
+                <p className="text-gray-500 font-semibold mt-3 line-clamp-1 max-w-65 sm:max-w-80">
                   {forum?.description}
                 </p>
               </>
             )}
           </div>
 
-          <Link to={'new-topic'} className="px-6 py-2.5 flex items-center gap-x-0.5 rounded-lg bg-primary text-white hover:shadow-[0_2px_20px_rgba(0,101,244,0.4)] focus:shadow-[0_2px_20px_rgba(0,101,244,0.4)] transition-all font-semibold">
-            <svg className="w-6 h-6">
+          <Link to={'new-topic'} className="px-3 sm:px-6 py-1.5 sm:py-2.5 text-xs sm:text-base flex items-center gap-x-0.5 rounded-lg bg-primary text-white hover:shadow-[0_2px_20px_rgba(0,101,244,0.4)] focus:shadow-[0_2px_20px_rgba(0,101,244,0.4)] transition-all font-semibold">
+            <svg className="size-5 sm:size-6">
               <use href="#plus"></use>
             </svg>
             تاپیک جدید
           </Link>
         </div>
 
-        <div className="flex items-center gap-x-8 text-gray-500 text-sm mt-6">
+        <div className="flex items-center gap-x-4 sm:gap-x-8 text-gray-500 text-sm mt-6">
           {!forumLoading ? (
             <>
               <div className="flex items-center gap-x-1">
@@ -86,7 +86,7 @@ function Forum() {
         </div>
 
         <div className="flex items-center justify-between mt-9">
-          <div className="flex gap-x-3 tracking-rtl-tighter text-sm font-semibold">
+          <div className="flex gap-x-3 tracking-rtl-tighter text-xs sm:text-sm font-semibold">
             <div className="relative">
               <svg className="absolute w-5 h-5 -rotate-90 left-4 top-1/2 transform -translate-y-1/2">
                 <use href="#chevron-left"></use>
@@ -107,7 +107,7 @@ function Forum() {
               <option value="">بدون پاسخ</option>
             </select>
           </div>
-          <p className="text-gray-500 text-sm">نمایش ۱-۱۰ از ۱۲,۴۵۰</p>
+          <p className="text-gray-500 hidden sm:inline-block text-xs sm:text-sm">نمایش ۱-۱۰ از ۱۲,۴۵۰</p>
         </div>
       </section>
 

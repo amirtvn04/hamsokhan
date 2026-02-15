@@ -8,7 +8,7 @@ export default function ForumCardSkeleton() {
                 <div className="flex-1 border-t border-black/15"></div>
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid sm:grid-cols-2 gap-3">
                 {Array.from({ length: 7 }).map((_, i) => (
                     <div key={i} className="py-5 px-6 rounded-lg bg-white border border-black/15">
                         <div className="flex items-start justify-between">
@@ -21,7 +21,7 @@ export default function ForumCardSkeleton() {
                         <div className="border-t border-black/15 w-full my-4"></div>
 
                         <div className="text-gray-500 flex items-center justify-between mt-2 mr-1.5 text-sm w-full">
-                            <div className="flex items-center gap-x-6">
+                            <div className="flex items-center gap-x-2 sm:gap-x-6">
                                 <div className="flex items-center gap-x-1">
                                     <Skeleton className='h-5 w-18' />
                                 </div>
@@ -30,7 +30,7 @@ export default function ForumCardSkeleton() {
                                 </div>
                             </div>
                             <div className="flex items-center gap-x-6">
-                                <Skeleton className='h-5 w-20' />
+                                <Skeleton className='h-5 w-20 hidden sm:inline-block' />
                                 <Skeleton className='h-5 w-20' />
                             </div>
                         </div>

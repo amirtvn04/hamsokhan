@@ -8,7 +8,7 @@ export function useHotTopics(limit = 6) {
   useEffect(() => {
     async function fetchHotTopics() {
       const { data, error } = await supabase
-        .from("topic_stats")
+        .from("forum_topics")
         .select("*")
         .order("posts_count", { ascending: false })
         .limit(limit);

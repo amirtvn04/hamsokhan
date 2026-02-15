@@ -34,7 +34,7 @@ function Category() {
                             <h3 className="text-xl mr-3">{item.category.title}</h3>
                             <div className="flex-1 border-t border-black/15"></div>
                         </div>
-                        <div className="grid grid-cols-2 gap-3">
+                        <div className="grid sm:grid-cols-2 gap-3">
                             {item.forums.map(item => (
                                 <ForumCard key={item.id} {...item} />
                             ))}

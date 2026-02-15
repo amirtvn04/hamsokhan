@@ -12,7 +12,7 @@ import TopicCardSkeleton from "../components/skeleton/TopicCardSkeleton";
 function Home() {
   const { categories, Categoryloading } = useCategories();
   const { topics: hotTopics, loading: hotLoading } = useHotTopics()
-console.log(hotTopics)
+
   return (
     <main>
       <section>
@@ -118,7 +118,7 @@ console.log(hotTopics)
               ))
               :
               hotTopics?.map(item => (
-                <TopicCard key={item.topic_id} topic_title={item.title} {...item} />
+                <TopicCard key={item.topic_id} {...item} />
               ))
             }
           </div>

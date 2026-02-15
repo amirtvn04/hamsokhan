@@ -11,20 +11,21 @@ export default function ForumCard({ title, description, last_author_name, topics
                     <Link to={`/forums/${slug}`}>
                         <h5 className="font-semibold hover:text-[#0065F4] transition duration-150">{title}</h5>
                     </Link>
-                    <p className="text-gray-500 text-sm mt-2">{description}</p>
+                    <p className="text-gray-500 text-xs sm:text-sm mt-2 font-semibold">{description}</p>
                 </div>
-
-                <svg className="w-6 h-6">
-                    <use href="#chevron-left"></use>
-                </svg>
+                <Link to={`/forums/${slug}`}>
+                    <svg className="size-5 sm:size-6 cursor-pointer">
+                        <use href="#chevron-left"></use>
+                    </svg>
+                </Link>
             </div>
 
             <div className="border-t border-black/15 w-full my-4"></div>
 
-            <div className="text-gray-500 flex items-center justify-between mt-2 mr-1.5 text-sm w-full">
-                <div className="flex items-center gap-x-8">
+            <div className="text-gray-500 flex items-center justify-between mt-2 mr-1.5 text-xs sm:text-sm w-full font-semibold">
+                <div className="flex items-center gap-x-4 sm:gap-x-8">
                     <div className="flex items-center gap-x-1">
-                        <svg className="w-5 h-5 text-gray-500">
+                        <svg className="size-4 sm:size-5 text-gray-500">
                             <use href="#message"></use>
                         </svg>
                         {topics_count.toLocaleString('fa-IR')}
@@ -32,7 +33,7 @@ export default function ForumCard({ title, description, last_author_name, topics
                         تاپیک
                     </div>
                     <div className="flex items-center gap-x-1">
-                        <svg className="w-5 h-5 text-gray-500">
+                        <svg className="size-4 sm:size-5 text-gray-500">
                             <use href="#people"></use>
                         </svg>
                         {posts_count.toLocaleString('fa-IR')}
@@ -40,15 +41,17 @@ export default function ForumCard({ title, description, last_author_name, topics
                         پست
                     </div>
                 </div>
-                <div className="flex items-center gap-x-2">
+                <div className="flex items-center gap-x-1 sm:gap-x-2">
                     <div className="flex items-center gap-x-1">
-                        <svg className="w-5 h-5 text-gray-500">
+                        <svg className="size-4 sm:size-5 text-gray-500">
                             <use href="#clock"></use>
                         </svg>
-                        <span className="text-black">{last_author_name}</span>
+                        <span className="text-black hidden sm:inline-block">{last_author_name}</span>
                     </div>
-                    <Circle />
-                    <span title={new Date(last_activity_at).toLocaleString('fa-IR')} className="text-gray-500 text-sm">{timeAgo(last_activity_at)}</span>
+                    <div className="hidden sm:inline-block">
+                        <Circle />
+                    </div>
+                    <span title={new Date(last_activity_at).toLocaleString('fa-IR')} className="text-gray-500 text-xs sm:text-sm">{timeAgo(last_activity_at)}</span>
                 </div>
             </div>
         </div>

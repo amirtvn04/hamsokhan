@@ -10,7 +10,7 @@ export default function EducationStatus({ degree }) {
     };
 
     return (
-        <span className={`${EducationClass[degree]} rounded-lg text-xs text-center text-balance font-semibold px-2 py-1 mt-1.5`}>
+        <span className={`${EducationClass[degree]} rounded-lg text-xs text-center text-balance font-semibold px-2 py-1 sm:mt-1.5`}>
             {academic_degree(degree)}
         </span>
     )

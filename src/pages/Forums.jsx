@@ -13,7 +13,7 @@ function Forums() {
         <p className="text-gray-500 font-semibold mt-3 mb-8">انجمن مورد نظر خود را انتخاب کنید و در گفتگوها شرکت کنید</p>
         <div className="flex items-stretch gap-x-3.5">
           <InputField icon='search' type='text' CustomStyles='w-full pr-12 pl-5 py-3 bg-white' placeholder='جستجو در بین انجمن‌ها...' />
-          <div className="relative">
+          <div className="relative hidden sm:inline-block">
             <svg className="absolute w-5 h-5 -rotate-90 left-4 top-1/2 transform -translate-y-1/2">
               <use href="#chevron-left"></use>
             </svg>
@@ -32,7 +32,7 @@ function Forums() {
                 <h3 className="text-xl mr-3">{item.category.title}</h3>
                 <div className="flex-1 border-t border-black/15"></div>
               </div>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid sm:grid-cols-2 gap-3">
                 {item.forums.map(item => (
                   <ForumCard key={item.id} {...item} />
                 ))}

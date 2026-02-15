@@ -36,7 +36,7 @@ export default function CreatePostForm({ topicId }) {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="border border-black/15 py-6 px-9 rounded-lg bg-white">
+        <form onSubmit={handleSubmit} className="border border-black/15 py-5 px-6 sm:py-6 sm:px-9 rounded-lg bg-white">
             <span className="inline-block font-semibold">پاسخ خود را بنویسید</span>
 
             <textarea

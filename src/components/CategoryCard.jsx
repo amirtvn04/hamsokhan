@@ -36,10 +36,10 @@ export default function CategoryCard({ title, description, topics_count, forums_
                 </svg>
             </div>
             <Link to={`/categories/${slug}`}>
-                <h5 className="tex font-semibold mt-3">{title}</h5>
+                <h5 className="text-base font-semibold mt-3">{title}</h5>
+                <p className="line-clamp-2 text-gray-500 mt-1 text-sm leading-6 min-h-12 font-semibold">{description}</p>
             </Link>
-            <p className="line-clamp-2 text-gray-500 mt-1 text-sm leading-6 min-h-12">{description}</p>
-            <div className="flex items-center justify-between text-gray-500 text-sm mt-5">
+            <div className="flex items-center justify-between text-gray-500 text-sm mt-5 font-semibold">
                 <span>
                     {forums_count.toLocaleString('fa-IR')}
                     {" "}
