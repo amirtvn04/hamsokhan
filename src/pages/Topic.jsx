@@ -91,7 +91,7 @@ export default function Topic() {
                     <svg className="size-4 sm:size-4.5">
                       <use href="#arrow-top"></use>
                     </svg>
-                    <span>۴۵</span>
+                    <span>۰</span>
                   </div>
                   <div className="flex items-center gap-x-1 font-semibold hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
                     <svg className="size-4 sm:size-4.5">
@@ -161,7 +161,7 @@ export default function Topic() {
                       <svg className="size-4 sm:size-4.5">
                         <use href="#arrow-top"></use>
                       </svg>
-                      <span>۴۵</span>
+                      <span>۰</span>
                     </div>
                     <div className="flex items-center gap-x-1 font-semibold hover:bg-blue-50 px-2 py-2 rounded-lg transition duration-150">
                       <svg className="size-4 sm:size-4.5">

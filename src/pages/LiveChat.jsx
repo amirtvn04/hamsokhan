@@ -6,9 +6,9 @@ function LiveChat() {
   return (
     <>
       <Header />
-      <div className="pt-18.5 container-uni min-h-100 h-screen overflow-hidden flex flex-col">
+      <div className="pt-18.5 container-uni min-h-100 h-dvh overflow-hidden flex flex-col">
         <main className="flex flex-1 gap-x-3 pb-3 overflow-hidden">
-          <aside className="border border-black/15 rounded-lg bg-white w-65 flex flex-col overflow-hidden">
+          <aside className="hidden sm:flex border border-black/15 rounded-lg bg-white w-65 flex-col overflow-hidden">
             <div className="px-4 pt-3 flex items-center justify-between">
               <h5 className="font-semibold">کانال ها</h5>
               <div className="hover:bg-blue-50 rounded-lg p-0.5 transition duration-150">
@@ -287,7 +287,7 @@ function LiveChat() {
             </div>
           </section>
 
-          <aside className="border border-black/15 rounded-lg bg-white w-65 flex flex-col overflow-hidden">
+          <aside className="hidden sm:flex border border-black/15 rounded-lg bg-white w-65 flex-col overflow-hidden">
             <div className="px-4 py-3 border-b border-black/15">
               <h5 className="font-semibold">کاربران آنلاین </h5>
               <p className="text-gray-500 mt-1 text-sm">۸ نفر</p>

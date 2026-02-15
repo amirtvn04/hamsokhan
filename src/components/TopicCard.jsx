@@ -40,7 +40,7 @@ export default function TopicCard({ topic_id, topic_title, author_name, author_s
                 </div>
             </div>
             <div className="flex flex-col items-end justify-between w-35 text-xs sm:text-sm font-semibold">
-                <span className="text-black font-semibold text-nowrap line-clamp-1 hidden sm:inline-block">سارا احمدی</span>
+                <span className="text-black font-semibold text-nowrap line-clamp-1 hidden sm:inline-block">{author_name}</span>
                 <div className="flex sm:hidden items-center gap-x-1 text-gray-500">
                     <svg className="w-4 h-4">
                         <use href="#message"></use>

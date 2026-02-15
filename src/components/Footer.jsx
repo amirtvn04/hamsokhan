@@ -46,7 +46,7 @@ export default function Footer() {
                         </ul>
                     </div>
                 </div>
-                <p className="text-gray-500 text-xs my-4 text-center">© ۱۴۰۴ یونی‌گپ. تمامی حقوق محفوظ است.</p>
+                <p className="text-gray-500 text-xs my-4 text-center">© ۱۴۰۴ یونی‌گپ. تمامی حقوق محفوظ است - توسعه دهنده:امیر توانا</p>
             </div>
         </footer>
     )

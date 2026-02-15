@@ -10,7 +10,7 @@ export function useHotTopics(limit = 6) {
       const { data, error } = await supabase
         .from("forum_topics")
         .select("*")
-        .order("posts_count", { ascending: false })
+        .order("created_at", { ascending: false })
         .limit(limit);
 
       if (!error) setTopics(data);
