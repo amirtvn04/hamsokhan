@@ -54,6 +54,12 @@
         font-weight: bold;
     }
 
+    @media (max-width: 640px) {
+        h3 {
+            font-size: 18px;
+        }
+    }
+
     header {
         z-index: 9999;
     }

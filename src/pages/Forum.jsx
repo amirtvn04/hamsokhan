@@ -114,7 +114,7 @@ function Forum() {
       <section className="mt-5 space-y-3">
         {topicLoading ?
           Array.from({ length: 6 }).map((_, i) => (
-            <TopicCardSkeleton />
+            <TopicCardSkeleton key={i} />
           ))
           :
           topics.map(item => (

@@ -9,7 +9,18 @@ export default function TestimonialsCarousel() {
       modules={[Navigation]}
       navigation
       spaceBetween={16}
-      slidesPerView={3}
+      slidesPerView={1} 
+      breakpoints={{
+        640: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      }}
     >
       {testimonials.map((test, index) => (
         <SwiperSlide key={index}>
@@ -21,7 +32,7 @@ export default function TestimonialsCarousel() {
                 <span className={clsx(test.status == 0 && 'bg-green-100 text-green-600 border-green-300', test.status == 1 && 'bg-sky-100 text-sky-600 border-sky-300', 'border rounded-xl text-xs px-2 py-0.5')}>{clsx(test.status == 0 && 'فارغ التحصیل', test.status == 1 && 'دانشجو')}</span>
               </div>
 
-              <p className='mt-4 line-clamp-2 min-h-12 text-gray-500 text-sm'>{test.text}</p>
+              <p className='mt-4 line-clamp-2 min-h-10 sm:min-h-12 text-gray-500 text-sm'>{test.text}</p>
             </div>
           </div>
         </SwiperSlide>

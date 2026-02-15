@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <footer className="bg-white border-t border-black/15 mt-12">
             <div className="container-uni">
-                <div className="grid grid-cols-5 gap-8 pt-8 pb-9 border-b border-black/15">
+                <div className="grid sm:grid-cols-5 gap-8 pt-8 pb-9 border-b border-black/15">
                     <div className="col-span-2">
                         <Link className="flex items-center gap-x-2">
                             <div to="/" className='bg-primary w-9 h-9 rounded-lg flex items-center justify-center text-[20px] text-white'>
